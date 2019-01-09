@@ -1,0 +1,15 @@
+.example-fill-remaining-space{
+    flex: 1 1 auto;
+    
+}
+.h{
+    color:red;
+}
+p{
+    color: #81A7FB;
+}
+.btn{
+    margin-right: .5em;
+    background-color: #020643;
+    color: #81A7FB;
+}
