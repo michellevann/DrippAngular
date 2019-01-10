@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -35,6 +37,7 @@ const routes = [
     BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     MatToolbarModule,

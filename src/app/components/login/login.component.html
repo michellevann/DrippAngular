@@ -1,8 +1,4 @@
-<p>
-  login works!
-</p>
-<app-header></app-header>
-<form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
+<form (ngSubmit)="onSubmit()" [formGroup]="_loginForm">
   <div>
     <mat-form-field>
       <input matInput placeholder="Username" formControlName="username" required />
@@ -13,11 +9,5 @@
       <input matInput placeholder="Password" formControlName="password" type="password" required />
     </mat-form-field>
   </div>
-  <div>
-    <mat-form-field>
-      <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required />
-    </mat-form-field>
-  </div>
-  </div>
-  <button mat-raised-button class="nat-btn" color="accent" type="submit">Register</button>
+  <button mat-raised-button class="nav-btn" color="accent" type="submit">Login</button>
 </form>
