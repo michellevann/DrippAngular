@@ -20,8 +20,8 @@ export class PaintingService {
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
   }
-  createPainting(painting: Painting) {
-    return this._http.post(`${ApiUrl}/Painting`, painting, { headers: this.getHeaders() });
+  createPainting(painting: FormData) {
+    return this._http.post(`${ApiUrl}/Painting`, painting, { headers: this.getHeaders()});
   }
   updatePainting(painting: Painting){
     return this._http.put(`${ApiUrl}/Painting`, painting, { headers: this.getHeaders() });
