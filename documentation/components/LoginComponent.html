@@ -151,6 +151,9 @@
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -169,12 +172,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_form: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+<code>constructor(_form: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, _authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/login/login.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/login/login.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -196,6 +199,18 @@
                                                   
                                                         <td>
                                                                     <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_authService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -243,7 +258,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/login/login.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/login/login.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -281,7 +296,45 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/login/login.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/login/login.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSubmit"></a>
+                        <span class="name">
+                            <b>
+                            onSubmit
+                            </b>
+                            <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onSubmit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/login/login.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -332,7 +385,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/login/login.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/login/login.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -347,6 +400,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { FormGroup, FormBuilder, FormControl } from &#x27;@angular/forms&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
 
 @Component({
   selector: &#x27;app-login&#x27;,
@@ -356,7 +410,7 @@ import { FormGroup, FormBuilder, FormControl } from &#x27;@angular/forms&#x27;;
 export class LoginComponent implements OnInit {
 
   private _loginForm: FormGroup;
-  constructor(private _form: FormBuilder) { 
+  constructor(private _form: FormBuilder, private _authService: AuthService) { 
     this.createForm();
   }
 
@@ -367,6 +421,11 @@ export class LoginComponent implements OnInit {
       username: new FormControl,
       password: new FormControl,
     });
+  }
+
+  onSubmit(){
+    console.log(this._loginForm.value);
+    this._authService.login(this._loginForm.value);
   }
 }
 </code></pre>
@@ -421,7 +480,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><form (ngSubmit)="onSubmit()" [formGroup]="_loginForm">  <div>    <mat-form-field>      <input matInput placeholder="Username" formControlName="username" required />    </mat-form-field>  </div>  <div>    <mat-form-field>      <input matInput placeholder="Password" formControlName="password" type="password" required />    </mat-form-field>  </div>  <button mat-raised-button class="nav-btn" color="accent" type="submit">Login</button></form></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegistrationComponent', 'selector': 'app-registration'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PaintingCreateComponent', 'selector': 'app-painting-create'},{'name': 'PaintingIndexComponent', 'selector': 'app-painting-index'},{'name': 'RegistrationComponent', 'selector': 'app-registration'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

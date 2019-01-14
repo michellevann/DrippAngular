@@ -1,0 +1,32 @@
+<h1>Details</h1>
+<hr>
+
+<div *ngIf="painting">
+  <div>
+    <label for="">PaintingId:</label>
+    <span>{{painting.PaintingEntityId}}</span>
+  </div>
+  <div>
+    <label for="">Title</label>
+    <span>{{painting.Title}}</span>
+  </div>
+  <div>
+    <label for="">Size</label>
+    <span>{{painting.Size}}</span>
+  </div>
+  <div>
+    <label for="">Price</label>
+    <span>{{painting.Price}}</span>
+  </div>
+  <div>
+    <label for="">Color</label>
+    <span>{{painting.Color}}</span>
+  </div>
+  <div>
+    <label for="">Created At</label>
+    <span>{{painting.DateAdded | date: 'fullDate'}}</span>
+  </div>
+</div>
+
+<button mat-button color="accent"> Edit</button>
+<button mar-button color="primary" routerLink="/painting">Back to List</button>

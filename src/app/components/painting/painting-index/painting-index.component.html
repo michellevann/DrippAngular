@@ -1,0 +1,59 @@
+<h1>All Your Stuff, Girl</h1>
+<a mat-raised-button color="primary" routerLink="/painting/Create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="Title">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize">Title</mat-header-cell>
+      <mat-cell *matCellDef="let painting">{{painting.Title}} </mat-cell>
+    </ng-container>
+
+<ng-container matColumnDef="Size">
+  <mat-header-cell *matHeaderCellDef class="matColumnSize">Size</mat-header-cell>
+  <mat-cell *matCellDef="let painting">{{painting.Size}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="Price">
+  <mat-header-cell *matHeaderCellDef class="matColumnSize">Price</mat-header-cell>
+  <mat-cell *matCellDef="let painting">{{painting.Price}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="Color">
+  <mat-header-cell *matHeaderCellDef class="matColumnSize">Title</mat-header-cell>
+  <mat-cell *matCellDef="let painting"> {{painting.Color}} </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="details">
+  <mat-header-cell *matHeaderCellDef class="matColumnSize">Details</mat-header-cell>
+  <mat-cell *matCellDef="let painting" routerLink="/painting/detail/{{painting.PaintingEntityId}}">
+  <i class="material-icons">library_books</i>
+</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="IsStarred">
+  <mat-header-cell *matHeaderCellDef>Sold?</mat-header-cell>
+  <mat-cell *matCellDef="let painting">
+    <button mat-icon-button disabled>
+      <i class="material-icons" (click)="isSold(painting, $event)" disabled>sold</i>
+    </button>
+  </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="DateAdded">
+  <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
+  <mat-cell *matCellDef="let painting"> {{painting.DateAdded | date:'fullDate'}} </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="buttons">
+  <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+  <mat-cell *matCellDef="let painting">
+    <i mat-icon class="material-icons" routerLink="/painting/edit/{{painting.PaintingEntityId}}"> edit </i>
+    <i class="material-icons" routerLink="/painting/delete/{{painting.PaintingEntityId"> delete </i>
+  </mat-cell>
+</ng-container>
+</mat-table>
+</div>
