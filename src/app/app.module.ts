@@ -30,12 +30,12 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes = [
   { path: 'home', component: HomeComponent },
-  { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'painting', canAvtivate: [AuthGuard], children: [
-     {path: '', component: PaintingIndexComponent},
+  { path: 'painting', canActivate: [AuthGuard], children: [
      { path: 'create', component: PaintingCreateComponent},
+     { path: 'index', component: PaintingIndexComponent},
+     { path: 'edit', component: PaintingEditComponent},
      { path: 'detail/:id', component: PaintingDetailComponent},
      { path: 'delete/:id', component: PaintingDeleteComponent}
     ]},
