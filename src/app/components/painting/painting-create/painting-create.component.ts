@@ -38,6 +38,7 @@ export class PaintingCreateComponent implements OnInit {
   }
 
   onSubmit(){
+
     const formData = new FormData();
     formData.append("Image", this.file[0], this.file.name);
     formData.append("Artist", this.paintingForm.value["Artist"]);
@@ -48,6 +49,7 @@ export class PaintingCreateComponent implements OnInit {
 
     console.log(formData.get("Image"))
     this._paintingService.createPainting(formData).subscribe(data => {
+
       this._router.navigate(['/painting']);
     });
   }

@@ -29,10 +29,12 @@
           <input matInput placeholder="Price" formControlName="Price" type="Price" required/>
         </mat-form-field>
     </div>
+
     <button type="button" md-button (click)="imgFileInput.click()">Add a photo</button>
     <input hidden type="file" #imgFileInput (change)="onFileChanged($event)">
+
     </div>
     <button mat-raised-button class="nav-btn" color="accent" type="submit">Add painting!</button>
 </form>
-
 <a mat-button routerLink="/painting/index">Back to list</a>
+
