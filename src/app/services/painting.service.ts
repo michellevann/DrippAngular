@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Painting } from '../models/Painting';
 
-const ApiUrl = 'https://localhost:44311';
+const ApiUrl = 'https://localhost:44311/api';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +18,9 @@ export class PaintingService {
     return this._http.get(`${ApiUrl}/Painting/${id}`, { headers: this.getHeaders() });
   }
   private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
   }
-  createPainting(painting: Painting) {
+  createPainting(painting: FormData) {
     return this._http.post(`${ApiUrl}/Painting`, painting, { headers: this.getHeaders()});
   }
   updatePainting(painting: Painting){
