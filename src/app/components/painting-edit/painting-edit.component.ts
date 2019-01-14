@@ -47,8 +47,8 @@ onSubmit(form) {
     Artist: form.value.Artist,
     OwnerId: form.value.OwnerId,
     IsSold: form.value.IsSold,
-    ImageUrl: form.value.ImageUrl,
     Size: form.value.Size,
+    ImageUrl: form.value.ImageUrl,
     Price: form.value.Price,
     Color: form.value.Color
   };

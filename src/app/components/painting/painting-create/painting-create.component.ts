@@ -26,10 +26,13 @@ export class PaintingCreateComponent implements OnInit {
       Size: new FormControl,
       Color: new FormControl,
       Price: new FormControl,
+      Artist: new FormControl,
+      ImageUrl: new FormControl
     });
   }
 
   onSubmit(){
+    console.log(this.paintingForm.value)
     this._paintingService.createPainting(this.paintingForm.value).subscribe(data => {
       this._router.navigate(['/painting']);
     });
