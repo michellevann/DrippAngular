@@ -237,10 +237,10 @@ export class HeaderComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar color&#x3D;&quot;#020643&quot;&gt;
-&lt;span style&#x3D;&quot;color: #81A7FB &quot;&gt; DRIP &lt;/span&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+&lt;span style&#x3D;&quot;color: #16FFBD &quot;&gt; DRIP &lt;/span&gt;
 &lt;span class&#x3D;&quot;example-fill-remaining-space&quot;&gt;&lt;/span&gt;
-&lt;button mat-raised-button class&#x3D;&quot;btn&quot;&gt; About &lt;/button&gt;
+&lt;button mat-raised-button class&#x3D;&quot;btn&quot; &gt; About &lt;/button&gt;
 &lt;button mat-raised-button class&#x3D;&quot;btn&quot; &gt; Register &lt;/button&gt;
 &lt;button mat-raised-button class&#x3D;&quot;btn&quot; &gt; Login &lt;/button&gt;
 &lt;/mat-toolbar&gt;
@@ -267,7 +267,7 @@ p{
 .btn{
     margin-right: .5em;
     background-color: #020643;
-    color: #81A7FB;
+    color: #e1bee7;
 }</code></pre>
     </div>
 
@@ -296,8 +296,8 @@ p{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-toolbar color="#020643"><span style="color: #81A7FB "> DRIP </span><span class="example-fill-remaining-space"></span><button mat-raised-button class="btn"> About </button><button mat-raised-button class="btn" > Register </button><button mat-raised-button class="btn" > Login </button></mat-toolbar><p></p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegistrationComponent', 'selector': 'app-registration'}];
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar color="primary"><span style="color: #16FFBD "> DRIP </span><span class="example-fill-remaining-space"></span><button mat-raised-button class="btn" > About </button><button mat-raised-button class="btn" > Register </button><button mat-raised-button class="btn" > Login </button></mat-toolbar><p></p></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PaintingCreateComponent', 'selector': 'app-painting-create'},{'name': 'PaintingIndexComponent', 'selector': 'app-painting-index'},{'name': 'RegistrationComponent', 'selector': 'app-registration'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>

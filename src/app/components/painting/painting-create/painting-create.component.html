@@ -1,0 +1,31 @@
+<h1> Add a painting. </h1>
+
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="paintingForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="Title" type="Title" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Size" formControlName="Size" type="Size" required/>
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="Color" formControlName="Color" type="Color" required/>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="Price" formControlName="Price" type="Price" required/>
+        </mat-form-field>
+    </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="accent" type="submit">Add painting!</button>
+</form>
+
+<a mat-button routerLink="/notes">Back to list</a>

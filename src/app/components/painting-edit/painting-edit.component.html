@@ -1,0 +1,43 @@
+<h1> Edit your painting</h1>
+<hr>
+
+<div *ngIf="painting">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editPaintingForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="PaintingEntityId" formControlName="PaintingEntityId" required [value]="painting.PaintingEntityId" />
+        </mat-form-field>
+      </div>
+      <div hidden>
+        <button mat-icon-button disabled>
+          <i class="material-icons" (click)="IsSold(painting, $event)" disabled>star</i>
+        </button>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="Title" type="Title" required [value]="painting.Title" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Price" formControlName="Price" type="Price" required [value]="painting.Price" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Size" formControlName="Size" type="Size" required [value]="painting.Size" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Color" formControlName="Color" type="Title" required [value]="painting.Color" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  </form>
+</div>
+
+<a mat-button routerLink="/painting">Back to list</a>
