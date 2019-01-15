@@ -3,30 +3,33 @@
 
 <div *ngIf="painting">
   <div>
-    <label for="">PaintingId:</label>
-    <span>{{painting.PaintingEntityId}}</span>
+    <label for="">PaintingId: </label>
+    <span>{{painting.paintingEntityId}}</span>
   </div>
   <div>
-    <label for="">Title</label>
-    <span>{{painting.Title}}</span>
+    <label for="">Title: </label>
+    <span>{{painting.title}}</span>
   </div>
   <div>
-    <label for="">Size</label>
-    <span>{{painting.Size}}</span>
+    <label for="">Size: </label>
+    <span>{{painting.size}}</span>
   </div>
   <div>
-    <label for="">Price</label>
-    <span>{{painting.Price}}</span>
+    <label for="">Price: </label>
+    <span>{{painting.price}}</span>
   </div>
   <div>
-    <label for="">Color</label>
-    <span>{{painting.Color}}</span>
+    <label for="">Color: </label>
+    <span>{{painting.color}}</span>
   </div>
   <div>
-    <label for="">Created At</label>
-    <span>{{painting.DateAdded | date: 'fullDate'}}</span>
+    <label for="">Date Added: </label>
+    <span>{{painting.dateAdded | date: 'fullDate'}}</span>
+  </div>
+  <div>
+    <img src="{{ painting.imageUrl }}">
   </div>
 </div>
 
 <button mat-button color="accent" routerLink="/painting/Edit/{{painting.PaintingEntityId}}"> Edit</button>
-<button mar-button color="primary" routerLink="/painting">Back to List</button>
+<button mar-button color="primary" routerLink="/painting/index">Back to List</button>
