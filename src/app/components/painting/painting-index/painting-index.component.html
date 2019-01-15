@@ -9,27 +9,27 @@
 
     <ng-container matColumnDef="Title">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Title</mat-header-cell>
-      <mat-cell *matCellDef="let painting">{{painting.Title}} </mat-cell>
+      <mat-cell *matCellDef="let painting">{{painting.title}} </mat-cell>
     </ng-container>
 
 <ng-container matColumnDef="Size">
   <mat-header-cell *matHeaderCellDef class="matColumnSize">Size</mat-header-cell>
-  <mat-cell *matCellDef="let painting">{{painting.Size}}</mat-cell>
+  <mat-cell *matCellDef="let painting">{{painting.size}}</mat-cell>
 </ng-container>
 
 <ng-container matColumnDef="Price">
   <mat-header-cell *matHeaderCellDef class="matColumnSize">Price</mat-header-cell>
-  <mat-cell *matCellDef="let painting">{{painting.Price}}</mat-cell>
+  <mat-cell *matCellDef="let painting">{{painting.price}}</mat-cell>
 </ng-container>
 
 <ng-container matColumnDef="Color">
   <mat-header-cell *matHeaderCellDef class="matColumnSize">Title</mat-header-cell>
-  <mat-cell *matCellDef="let painting"> {{painting.Color}} </mat-cell>
+  <mat-cell *matCellDef="let painting"> {{painting.color}} </mat-cell>
 </ng-container>
 
 <ng-container matColumnDef="details">
   <mat-header-cell *matHeaderCellDef class="matColumnSize">Details</mat-header-cell>
-  <mat-cell *matCellDef="let painting" routerLink="/painting/detail/{{painting.PaintingEntityId}}">
+  <mat-cell *matCellDef="let painting" routerLink="/painting/detail/{{painting.paintingEntityId}}">
   <i class="material-icons">library_books</i>
 </mat-cell>
 </ng-container>
@@ -45,7 +45,7 @@
 
 <ng-container matColumnDef="DateAdded">
   <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
-  <mat-cell *matCellDef="let painting"> {{painting.DateAdded | date:'fullDate'}} </mat-cell>
+  <mat-cell *matCellDef="let painting"> {{painting.dateAdded | date:'fullDate'}} </mat-cell>
 </ng-container>
 
 <ng-container matColumnDef="buttons">
