@@ -11,7 +11,7 @@ export class PaintingService {
   
   constructor(private _http: HttpClient) { }
 
-  getPainting() {
+  getPaintings() {
     return this._http.get(`${ApiUrl}/Painting`, { headers: this.getHeaders() });
   }
   getPaintingById(id:string){

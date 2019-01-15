@@ -69,6 +69,7 @@ const routes = [
     MatInputModule,
     MatTableModule
   ],
+  
   providers: [
     AuthService,
     PaintingService,
