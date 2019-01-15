@@ -13,7 +13,7 @@ export class PaintingIndexComponent implements OnInit {
   constructor(private _paintingService: PaintingService) { }
 
   ngOnInit() {
-    this._paintingService.getPainting().subscribe((painting: Painting[]) => {
+    this._paintingService.getPaintings().subscribe((painting: Painting[]) => {
       this.dataSource = new MatTableDataSource<Painting>(painting);
     });
   }

@@ -1,10 +1,19 @@
-body {
-    height: 100%;
-    background-image: linear-gradient(to bottom right, #49071f );
+h1{
+    font-family: "Roboto", Arial, sans-serif;
+    color: #49071f;
 }
-
+h2{
+    color:#49071f;
+}
+p{
+    color: #49071f;
+}
+body{
+    position: relative;
+    top: 180px;
+}
 .pulse {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -81,8 +90,16 @@ body {
         background-position: 719px 0;
     }
 }
-
-.cover-heading{
-    font-size:60px;
+.wrapper{
+    position: relative;
+    top: 950px;
+    margin-right: 600px;
 }
-
+#about{
+    position: relative;
+}
+#container{
+    margin: 10em;
+    text-align: center;
+    
+}
