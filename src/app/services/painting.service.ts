@@ -11,17 +11,19 @@ export class PaintingService {
   
   constructor(private _http: HttpClient) { }
 
+  private getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
+  }
+
+  createPainting(painting: FormData) {
+    return this._http.post(`${ApiUrl}/Painting`, painting, { headers: this.getHeaders()});
+  }
+  
   getPaintings() {
     return this._http.get(`${ApiUrl}/Painting`, { headers: this.getHeaders() });
   }
   getPaintingById(id:string){
     return this._http.get(`${ApiUrl}/Painting/${id}`, { headers: this.getHeaders() });
-  }
-  private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
-  }
-  createPainting(painting: FormData) {
-    return this._http.post(`${ApiUrl}/Painting`, painting, { headers: this.getHeaders()});
   }
   updatePainting(painting: Painting){
     return this._http.put(`${ApiUrl}/Painting`, painting, { headers: this.getHeaders() });

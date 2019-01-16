@@ -33,6 +33,7 @@ const routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'products', component: ProductsComponent },
   { path: 'painting', canActivate: [AuthGuard], children: [
      { path: 'create', component: PaintingCreateComponent},
      { path: 'index', component: PaintingIndexComponent},
@@ -41,7 +42,6 @@ const routes = [
      { path: 'delete/:id', component: PaintingDeleteComponent}
     ]},
   { path: '**', component: HomeComponent },
-  { path: 'products', component: ProductsComponent }
 ];
   
 @NgModule({

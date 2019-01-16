@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ProductService } from 'src/app/services/product.service';
+import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +11,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  productForm: FormGroup;
+
+  constructor(private http: HttpClient, private _productService: ProductService, private _router: Router) { }
 
   ngOnInit() {
+  }
+
+  chargeCreditCard() {
+    const formData = new FormData();
+    let form = document.getElementsByTagName("form")[0];
+    (<any>window).Stripe.card.createToken({
+      number: 4242424242424242,
+      // exp_month: form.expMonth.value,
+      exp_month: 12,
+      exp_year: 2019,
+      cvc: 123,
+    }, (status: number, response: any) => {
+      if (status === 200) {
+        let token = response.id;
+        formData.append("Token", token)
+        console.log("Token after charge:", token)
+        this.chargeCard(formData);
+      } else {
+        console.log(response.error.message);
+      }
+    });
+  }
+
+  chargeCard(token: FormData) {
+    console.log(token)
+    console.log("Charge card method")
+    this._productService.createPurchaseToken(token).subscribe(data => {
+        console.log(data)
+      // this._router.navigate(['/products']);
+    });
   }
 
 }
