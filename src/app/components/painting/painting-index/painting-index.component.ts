@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaintingService } from '../../../services/painting.service';
-import { Painting } from '../../../models/painting';
+import { Painting } from '../../../models/Painting';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({

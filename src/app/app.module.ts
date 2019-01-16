@@ -27,6 +27,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PaintingEditComponent } from './components/painting-edit/painting-edit.component';
 import { PaintingDeleteComponent } from './components/painting/painting-delete/painting-delete.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ProductsComponent } from './components/products/products.component';
 
 const routes = [
   { path: 'home', component: HomeComponent },
@@ -39,7 +40,8 @@ const routes = [
      { path: 'detail/:id', component: PaintingDetailComponent},
      { path: 'delete/:id', component: PaintingDeleteComponent}
     ]},
-  { path: '**', component: HomeComponent }
+  { path: '**', component: HomeComponent },
+  { path: 'products', component: ProductsComponent }
 ];
   
 @NgModule({
@@ -53,7 +55,8 @@ const routes = [
     PaintingCreateComponent,
     PaintingDetailComponent,
     PaintingEditComponent,
-    PaintingDeleteComponent
+    PaintingDeleteComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
