@@ -17,9 +17,9 @@ painting: Painting;
       });
     });
   }
-onDelete(){
+onDelete(form){
   this._paintingService.deletePainting(this.painting.PaintingEntityId).subscribe(() => {
-    this._router.navigate(['/painting']);
+    this._router.navigate(['/painting/index']);
   });
 }
   ngOnInit() {
