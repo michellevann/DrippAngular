@@ -3,7 +3,6 @@ import { PaintingService } from '../../../services/painting.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-painting-create',
   templateUrl: './painting-create.component.html',
