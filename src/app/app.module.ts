@@ -41,7 +41,8 @@ const routes = [
      { path: 'edit/:id', component: PaintingEditComponent},
      { path: 'detail/:id', component: PaintingDetailComponent},
      { path: 'delete/:id', component: PaintingDeleteComponent}
-    ]},
+    ]
+  },
   { path: '**', component: HomeComponent }
 ];
   
