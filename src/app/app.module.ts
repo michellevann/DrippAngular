@@ -23,6 +23,7 @@ import {
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaintingService } from './services/painting.service';
+import { ProductsService } from './services/products.service';
 import { PaintingIndexComponent } from './components/painting/painting-index/painting-index.component';
 import { PaintingCreateComponent } from './components/painting/painting-create/painting-create.component';
 import { PaintingDetailComponent } from './components/painting/painting-detail/painting-detail.component';
@@ -40,7 +41,7 @@ const routes = [
   { path: 'painting', canActivate: [AuthGuard], children: [
      { path: 'create', component: PaintingCreateComponent},
      { path: 'index', component: PaintingIndexComponent},
-     { path: 'edit', component: PaintingEditComponent},
+     { path: 'edit/:id', component: PaintingEditComponent},
      { path: 'detail/:id', component: PaintingDetailComponent},
      { path: 'delete/:id', component: PaintingDeleteComponent}
     ]},
@@ -83,7 +84,8 @@ const routes = [
     AuthService,
     PaintingService,
     AuthGuard,
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    ProductsService
   ],
 
   entryComponents: [

@@ -3,7 +3,6 @@ import { PaintingService } from '../../../services/painting.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-painting-create',
   templateUrl: './painting-create.component.html',
@@ -37,7 +36,7 @@ export class PaintingCreateComponent implements OnInit {
     console.log(this.file)
   }
 
-  onSubmit(){
+  onSubmit(form){
 
     const formData = new FormData();
     formData.append("Image", this.file[0], this.file.name);

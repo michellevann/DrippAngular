@@ -19,6 +19,9 @@ export interface DialogData {
   state: string;
   zip: number;
 }
+import { ProductsService } from '../../services/products.service';
+import { Products } from '../../models/Products';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-products',
@@ -26,6 +29,7 @@ export interface DialogData {
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+  dataSource: MatTableDataSource<Products>;
 
   productForm: FormGroup;
   products$: Object;
@@ -76,7 +80,8 @@ export class ProductsComponent implements OnInit {
         console.log(data)
       // this._router.navigate(['/products']);
     });
-  }
+  }  
+  // constructor(private _productsService : ProductsService) { }
 
   openDialog( dollar, title ): void {
     const dialogRef = this.dialog.open(ProductsDialog, {
