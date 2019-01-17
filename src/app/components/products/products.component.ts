@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
   productForm: FormGroup;
   products$: Object;
 
+
   constructor(private http: HttpClient, private _productService: ProductService, private _router: Router, private _paintingService: PaintingService) { }
 
   ngOnInit() {
@@ -56,14 +57,5 @@ export class ProductsComponent implements OnInit {
         console.log(data)
       // this._router.navigate(['/products']);
     });
-    
-  constructor(private _productsService : ProductsService) { }
-
-  ngOnInit() {
-      this._productsService.getProducts().subscribe((products: Products[]) => {
-        this.dataSource = new MatTableDataSource<Products>(products);
-      });
-    
   }
-  columnNames = ['details', 'Title', 'Size', 'Color', 'Price', 'DateAdded', 'buttons'];
 }
