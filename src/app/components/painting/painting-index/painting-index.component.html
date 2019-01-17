@@ -23,7 +23,7 @@
 </ng-container>
 
 <ng-container matColumnDef="Color">
-  <mat-header-cell *matHeaderCellDef class="matColumnSize">Title</mat-header-cell>
+  <mat-header-cell *matHeaderCellDef class="matColumnSize">Color</mat-header-cell>
   <mat-cell *matCellDef="let painting"> {{painting.color}} </mat-cell>
 </ng-container>
 
@@ -51,8 +51,8 @@
 <ng-container matColumnDef="buttons">
   <mat-header-cell *matHeaderCellDef> </mat-header-cell>
   <mat-cell *matCellDef="let painting">
-    <i mat-icon class="material-icons" routerLink="/painting/edit/{{painting.PaintingEntityId}}"> edit </i>
-    <i class="material-icons" routerLink="/painting/delete/{{painting.PaintingEntityId"> delete </i>
+    <i mat-icon class="material-icons" routerLink="/painting/edit/{{painting.paintingEntityId}}"> edit </i>
+    <i class="material-icons" routerLink="/painting/delete/{{painting.paintingEntityId}}"> delete </i>
   </mat-cell>
 </ng-container>
 </mat-table>

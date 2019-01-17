@@ -1,11 +1,10 @@
-export interface Painting {
+export interface Products {
     PaintingEntityId: number;
     Artist: string;
     Title: string;
     Size: string;
     Color: string;
     Price: number;
-    IsSold: boolean;
     ImageUrl: string;
     DateAdded?: Date;
 }

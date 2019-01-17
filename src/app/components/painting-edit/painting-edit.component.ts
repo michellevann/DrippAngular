@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PaintingEditComponent implements OnInit {
 
   painting: Painting;
+
   editPaintingForm: FormGroup;
   constructor(private _form: FormBuilder,
     private _paintingService: PaintingService,
@@ -21,7 +22,7 @@ export class PaintingEditComponent implements OnInit {
       this._ar.paramMap.subscribe(p => {
         this._paintingService.getPaintingById(p.get('id')).subscribe((singlePainting: Painting) => {
           this.painting= singlePainting;
-          this.createForm();
+          this.createForm(this.painting);
         });
       });
      }
@@ -29,13 +30,15 @@ export class PaintingEditComponent implements OnInit {
   ngOnInit() {
   }
 
-createForm() {
+createForm(painting : any ) {
+  console.log(painting)
   this.editPaintingForm = this._form.group({
     PaintingEntityId: new FormControl(this.painting.PaintingEntityId),
     IsSold: new FormControl(this.painting.IsSold),
     Title: new FormControl(this.painting.Title),
     Size: new FormControl(this.painting.Size),
     Price: new FormControl(this.painting.Price),
+    ImageUrl: new FormControl(this.painting.ImageUrl),
     Color: new FormControl(this.painting.Color)
   });
 }
@@ -45,7 +48,6 @@ onSubmit(form) {
     PaintingEntityId: form.value.PaintingEntityId,
     Title: form.value.Title,
     Artist: form.value.Artist,
-    OwnerId: form.value.OwnerId,
     IsSold: form.value.IsSold,
     Size: form.value.Size,
     ImageUrl: form.value.ImageUrl,
@@ -53,7 +55,7 @@ onSubmit(form) {
     Color: form.value.Color
   };
   this._paintingService.updatePainting(updatePainting).subscribe(d => {
-    this._router.navigate(['/painting']);
+    this._router.navigate(['/painting/index']);
   });
 }
 }
