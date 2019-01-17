@@ -44,7 +44,11 @@ export class ProductsComponent implements OnInit {
   state: string;
   zip: number;
 
+
   constructor(private http: HttpClient, private _productService: ProductService, private _router: Router, private _paintingService: PaintingService, public dialog: MatDialog) { }
+
+
+  
 
   ngOnInit() {
     this._paintingService.getPaintings().subscribe(
@@ -80,6 +84,7 @@ export class ProductsComponent implements OnInit {
         console.log(data)
       // this._router.navigate(['/products']);
     });
+
   }  
   // constructor(private _productsService : ProductsService) { }
 
@@ -122,4 +127,5 @@ export class ProductsDialog {
       this.dialogRef.close();
     }
     
-}
+
+  }
