@@ -15,7 +15,8 @@ import {
   MatButtonModule, 
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule}
+  MatTableModule,
+  MatCardModule}
   from '@angular/material';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
@@ -42,7 +43,7 @@ const routes = [
      { path: 'detail/:id', component: PaintingDetailComponent},
      { path: 'delete/:id', component: PaintingDeleteComponent}
     ]},
-  { path: '**', component: HomeComponent }
+  { path: '**', component: HomeComponent },
 ];
   
 @NgModule({
@@ -71,7 +72,8 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   
   providers: [
