@@ -16,7 +16,9 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
-  MatCardModule}
+  MatCardModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatDialogModule}
   from '@angular/material';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
@@ -28,7 +30,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PaintingEditComponent } from './components/painting-edit/painting-edit.component';
 import { PaintingDeleteComponent } from './components/painting/painting-delete/painting-delete.component';
 import { AuthGuard } from './guards/auth.guard';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductsComponent, ProductsDialog } from './components/products/products.component';
 
 const routes = [
   { path: 'home', component: HomeComponent },
@@ -57,7 +59,8 @@ const routes = [
     PaintingDetailComponent,
     PaintingEditComponent,
     PaintingDeleteComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductsDialog
   ],
   imports: [
     BrowserModule,
@@ -72,14 +75,21 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   
   providers: [
     AuthService,
     PaintingService,
-    AuthGuard
+    AuthGuard,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
+
+  entryComponents: [
+    ProductsDialog
+  ],
+
   bootstrap: [AppComponent]
  
 })

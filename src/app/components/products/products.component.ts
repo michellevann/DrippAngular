@@ -1,10 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { PaintingService } from 'src/app/services/painting.service';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+export interface DialogData {
+  cardNumber: number;
+  expMonth: number;
+  expYear: number;
+  cvc: number;
+  email: string;
+  streetAddress: string;
+  aptNumber?: string;
+  city: string;
+  state: string;
+  zip: number;
+}
 
 @Component({
   selector: 'app-products',
@@ -15,8 +29,18 @@ export class ProductsComponent implements OnInit {
 
   productForm: FormGroup;
   products$: Object;
+  cardNumber: number;
+  expMonth: number;
+  expYear: number;
+  cvc: number;
+  email: string;
+  streetAddress: string;
+  aptNumber?: string;
+  city: string;
+  state: string;
+  zip: number;
 
-  constructor(private http: HttpClient, private _productService: ProductService, private _router: Router, private _paintingService: PaintingService) { }
+  constructor(private http: HttpClient, private _productService: ProductService, private _router: Router, private _paintingService: PaintingService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this._paintingService.getPaintings().subscribe(
@@ -54,4 +78,43 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  openDialog( dollar, title ): void {
+    const dialogRef = this.dialog.open(ProductsDialog, {
+      width: '250px',
+      data: {
+        cardNumber: this.cardNumber,
+        expMonth: this.expMonth,
+        expYear: this.expYear,
+        cvc: this.cvc,
+        email: this.email,
+        streetAddress: this.streetAddress,
+        aptNumber: this.aptNumber,
+        city: this.city,
+        state: this.state,
+        zip: this.zip,
+        price: dollar,
+        title: title
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('the dialog was closed');
+    });
+  }
+
+}
+
+@Component({
+  selector: 'app-products-dialog',
+  templateUrl: './products.component.dialog.html',
+})
+export class ProductsDialog {
+  constructor(
+    public dialogRef: MatDialogRef<ProductsDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+    onNoClick(): void{
+      this.dialogRef.close();
+    }
+    
 }
