@@ -15,7 +15,8 @@ import {
   MatButtonModule, 
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule}
+  MatTableModule,
+  MatCardModule}
   from '@angular/material';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
@@ -70,7 +71,8 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   
   providers: [

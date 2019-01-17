@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { PaintingService } from 'src/app/services/painting.service';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-products',
@@ -12,10 +14,14 @@ import { FormGroup } from '@angular/forms';
 export class ProductsComponent implements OnInit {
 
   productForm: FormGroup;
+  products$: Object;
 
-  constructor(private http: HttpClient, private _productService: ProductService, private _router: Router) { }
+  constructor(private http: HttpClient, private _productService: ProductService, private _router: Router, private _paintingService: PaintingService) { }
 
   ngOnInit() {
+    this._paintingService.getPaintings().subscribe(
+      _paintingService => this.products$ = _paintingService
+    )
   }
 
   chargeCreditCard() {
