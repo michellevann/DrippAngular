@@ -1,22 +1,24 @@
 <body>
 
-        <div class="container">
-            <nav>
-                    <ul class="nav masthead-nav">
-
-                    <button mat-button class="btn" routerLink="/home">DRIPP</button>
+    <router-outlet>
+    <div class="masthead-clearfix">
+        <div class="navbar-collapse collapse">
+            <div class="container">
+                <ul class="nav masthead-nav">
+                     <button mat-button class="btn" routerLink="/home">DRIPP</button>
                     <button mat-button class="btn" routerLink="/about"> About </button>
                     <button mat-button class="btn" routerLink="/products"> All Paintings </button>
                     <button mat-button class="btn" routerLink="/login"> Login </button>
+                    <button mat-button class ="btn" routerLink="/painting/index">Index</button>
                     <div class="underbar"></div>
-
-                    </ul>
-               
-            </nav>
+                </ul>
+              
+            
+            </div>
         </div>
 
+
+
 </body>
-
-
 
 
