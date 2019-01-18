@@ -29,7 +29,7 @@ export class AuthService {
     return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
-      this._router.navigate(['/']);
+      this._router.navigate(['/painting/index']);
     });
   }
 

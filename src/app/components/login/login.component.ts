@@ -8,23 +8,30 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   private _loginForm: FormGroup;
-  constructor(private _form: FormBuilder, private _authService: AuthService) { 
+
+  constructor(private _form: FormBuilder, private _authService: AuthService) {
     this.createForm();
   }
 
   ngOnInit() {
   }
-  createForm(){
+
+  createForm() {
     this._loginForm = this._form.group({
       username: new FormControl,
       password: new FormControl,
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this._loginForm.value);
     this._authService.login(this._loginForm.value);
   }
+
 }
+
+
+
+  
+

@@ -23,11 +23,10 @@ export class PaintingCreateComponent implements OnInit {
 
   createForm() {
     this.paintingForm = this._form.group({
-      Artist: new FormControl,
       Title: new FormControl,
       Size: new FormControl,
       Color: new FormControl,
-      Price: new FormControl
+      Price: new FormControl,
     });
   }
 
@@ -39,12 +38,11 @@ export class PaintingCreateComponent implements OnInit {
   onSubmit(form){
 
     const formData = new FormData();
-    formData.append("Image", this.file[0], this.file.name);
-    formData.append("Artist", this.paintingForm.value["Artist"]);
     formData.append("Title", this.paintingForm.value["Title"]);
     formData.append("Size", this.paintingForm.value["Size"]);
     formData.append("Color", this.paintingForm.value["Color"]);
     formData.append("Price", this.paintingForm.value["Price"]);
+    formData.append("Image", this.file[0], this.file.name);
 
     console.log(formData.get("Image"))
     this._paintingService.createPainting(formData).subscribe(data => {
