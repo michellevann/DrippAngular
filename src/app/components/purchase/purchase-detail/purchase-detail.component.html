@@ -1,0 +1,50 @@
+<app-header></app-header>
+<h1>Details</h1>
+<hr>
+PaintingEntityId: number;
+PurchaseId: number;
+StreetAddress: string;
+AptNumber?: string;
+City: string;
+State: string;
+Zip: number;
+BuyerEmail: string;
+}
+<div *ngIf="purchase">
+    <div>
+      <label for=""> PaintingEntityId: </label>
+      <span>{{purchase.paintingEntityId}}</span>
+    </div>
+  <div>
+    <label for=""> PurchaseId: </label>
+    <span>{{painting.paintingEntityId}}</span>
+  </div>
+  <div>
+    <label for="">StreetAddress: </label>
+    <span>{{purchase.StreetAddress}}</span>
+  </div>
+  <div>
+    <label for="">AptNumber?: </label>
+    <span>{{purchase.aptNumber?}}</span>
+  </div>
+  <div>
+    <label for="">City: </label>
+    <span>{{purchase.city}}</span>
+  </div>
+  <div>
+    <label for="">State: </label>
+    <span>{{purchase.state}}</span>
+  </div>
+  <div>
+      <label for="">Zip: </label>
+      <span>{{purchase.zip}}</span>
+    </div>
+  <div>
+    <label for="">BuyerEmail: </label>
+    <span>{{purchase.buyerEmail}}</span>
+  </div>
+ 
+</div>
+
+
+<button mar-button color="primary" routerLink="/purchase/index">Back to List</button>
