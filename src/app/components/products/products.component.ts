@@ -56,9 +56,6 @@ export class ProductsComponent implements OnInit {
     )
   }
 
-  // constructor(private _productsService : ProductsService) { }
-
-
   openDialog(dollar, title): void {
     const dialogRef = this.dialog.open(ProductsDialog, {
       width: '250px',
@@ -124,7 +121,6 @@ export class ProductsDialog {
           City: form.value.City,
           State: form.value.State,
           Zip: form.value.Zip
-           // <-- Fill out model
         }
         formData.append("Token", token),
         console.log("Token after charge:", formThing)
@@ -133,8 +129,6 @@ export class ProductsDialog {
         console.log(response.error.message);
       }
     });
-    // let email = this.data.email;
-    // formData.append("BuyerEmail", email)
   }
 
   chargeCard(form) {
@@ -166,7 +160,4 @@ export class ProductsDialog {
     this.chargeCreditCard(form)
     console.log("BLAH", form)
   }
-
-
-
 }
