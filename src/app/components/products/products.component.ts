@@ -142,6 +142,7 @@ export class ProductsDialog {
     console.log("Charge card method")
     this._productService.createPurchaseToken(form).subscribe(data => {
       console.log(data)
+      this.onNoClick();
       // this._router.navigate(['/products']);
     });
 
