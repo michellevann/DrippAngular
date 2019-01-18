@@ -35,7 +35,7 @@ export class PaintingCreateComponent implements OnInit {
     console.log(this.file)
   }
 
-  onSubmit(form){
+  onSubmit(){
 
     const formData = new FormData();
     formData.append("Title", this.paintingForm.value["Title"]);
