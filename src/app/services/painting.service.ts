@@ -28,7 +28,11 @@ export class PaintingService {
     return this._http.put(`${ApiUrl}/Painting/${edit.PaintingEntityId}`, edit, { headers: this.getHeaders() });
   }
   deletePainting(id: number) {
+    console.log(id)
     return this._http.delete(`${ApiUrl}/Painting/${id}`, { headers: this.getHeaders() });
+  }
+  private getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
   }
 }
 
