@@ -1,7 +1,15 @@
 .card{
     max-width: 200px;
-}
 
+}
 .cards{
     display: inline-block;
+    padding: 1em;
+}
+
+.mat-card-title{
+    text-align: center;
+}
+img{
+    max-width: 100%;
 }

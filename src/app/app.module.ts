@@ -40,6 +40,11 @@ const routes = [
   { path: 'home', component: HomeComponent },
   { path: 'admin', component: LoginComponent},
   { path: 'products', component: ProductsComponent },
+  { path: 'purchase', canActivate: [AuthGuard], children: [
+    {path:'index', component: PurchaseIndexComponent},
+    {path: 'detail', component: PurchaseDetailComponent},
+    {path: 'delete', component: PurchaseDeleteComponent}
+  ]},
   { path: 'painting', canActivate: [AuthGuard], children: [
      { path: 'create', component: PaintingCreateComponent},
      { path: 'index', component: PaintingIndexComponent},
