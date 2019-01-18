@@ -15,7 +15,7 @@ export class PurchaseIndexComponent implements OnInit {
   constructor(private _purchaseService: PurchaseService, private _paintingService: PaintingService) { }
   
 
-  columnNames = ['details', 'Title', 'Size', 'Color', 'Price', 'DateAdded', 'buttons'];
+  columnNames = ['details', 'StreetAddress', 'AptNumber', 'City', 'State', 'Zip', 'BuyerEmail'];
   dataSource: MatTableDataSource<Purchase>
 
   
@@ -25,4 +25,5 @@ export class PurchaseIndexComponent implements OnInit {
     });
   }
 }
+
 
