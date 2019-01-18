@@ -2,10 +2,14 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { PaintingService } from 'src/app/services/painting.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+import { ProductsService } from '../../services/products.service';
+import { Products } from '../../models/Products';
+import { MatTableDataSource } from '@angular/material';
 
 export interface DialogData {
   cardNumber: number;
@@ -13,15 +17,15 @@ export interface DialogData {
   expYear: number;
   cvc: number;
   email: string;
+  name: string;
   streetAddress: string;
   aptNumber?: string;
   city: string;
   state: string;
   zip: number;
+  price: number;
+  title: string;
 }
-import { ProductsService } from '../../services/products.service';
-import { Products } from '../../models/Products';
-import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-products',
@@ -30,25 +34,21 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class ProductsComponent implements OnInit {
   dataSource: MatTableDataSource<Products>;
-
-  productForm: FormGroup;
+ 
   products$: Object;
   cardNumber: number;
   expMonth: number;
   expYear: number;
   cvc: number;
   email: string;
+  name: string;
   streetAddress: string;
   aptNumber?: string;
   city: string;
   state: string;
   zip: number;
 
-
   constructor(private http: HttpClient, private _productService: ProductService, private _router: Router, private _paintingService: PaintingService, public dialog: MatDialog) { }
-
-
-  
 
   ngOnInit() {
     this._paintingService.getPaintings().subscribe(
@@ -56,39 +56,10 @@ export class ProductsComponent implements OnInit {
     )
   }
 
-  chargeCreditCard() {
-    const formData = new FormData();
-    let form = document.getElementsByTagName("form")[0];
-    (<any>window).Stripe.card.createToken({
-      number: 4242424242424242,
-      // exp_month: form.expMonth.value,
-      exp_month: 12,
-      exp_year: 2019,
-      cvc: 123,
-    }, (status: number, response: any) => {
-      if (status === 200) {
-        let token = response.id;
-        formData.append("Token", token)
-        console.log("Token after charge:", token)
-        this.chargeCard(formData);
-      } else {
-        console.log(response.error.message);
-      }
-    });
-  }
-
-  chargeCard(token: FormData) {
-    console.log(token)
-    console.log("Charge card method")
-    this._productService.createPurchaseToken(token).subscribe(data => {
-        console.log(data)
-      // this._router.navigate(['/products']);
-    });
-
-  }  
   // constructor(private _productsService : ProductsService) { }
 
-  openDialog( dollar, title ): void {
+
+  openDialog(dollar, title): void {
     const dialogRef = this.dialog.open(ProductsDialog, {
       width: '250px',
       data: {
@@ -97,6 +68,7 @@ export class ProductsComponent implements OnInit {
         expYear: this.expYear,
         cvc: this.cvc,
         email: this.email,
+        name: this.name,
         streetAddress: this.streetAddress,
         aptNumber: this.aptNumber,
         city: this.city,
@@ -118,14 +90,83 @@ export class ProductsComponent implements OnInit {
   selector: 'app-products-dialog',
   templateUrl: './products.component.dialog.html',
 })
-export class ProductsDialog {
-  constructor(
-    public dialogRef: MatDialogRef<ProductsDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-    onNoClick(): void{
-      this.dialogRef.close();
+export class ProductsDialog { 
+  formThing: FormGroup;
+  constructor(private _productService: ProductService,
+    public dialogRef: MatDialogRef<ProductsDialog>, private _form:FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      this.createForm()
     }
-    
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  chargeCreditCard(form) {
+    const formData = new FormData();
+    console.log(form.value);
+    (<any>window).Stripe.card.createToken({
+      number: 4242424242424242,
+      exp_month: 12, //form.value.expMonth
+      exp_year: 2019,
+      cvc: 123,
+    }, (status: number, response: any) => {
+      if (status === 200) {
+        let token = response.id;
+        let formThing = {
+          Token: token,
+          Title: this.data.title,
+          Price: this.data.price,
+          BuyerEmail: form.value.Email,
+          BuyerName: form.value.BuyerName,
+          StreetAddress: form.value.streetAddress,
+          AptNumber: form.value.aptNumber,
+          City: form.value.City,
+          State: form.value.State,
+          Zip: form.value.Zip
+           // <-- Fill out model
+        }
+        formData.append("Token", token),
+        console.log("Token after charge:", formThing)
+        this.chargeCard(formThing);
+      } else {
+        console.log(response.error.message);
+      }
+    });
+    // let email = this.data.email;
+    // formData.append("BuyerEmail", email)
+  }
+
+  chargeCard(form) {
+    console.log(form)
+    console.log("Charge card method")
+    this._productService.createPurchaseToken(form).subscribe(data => {
+      console.log(data)
+      // this._router.navigate(['/products']);
+    });
 
   }
+
+  createForm(){
+    this.formThing = this._form.group({
+      cardNumber: new FormControl,
+      expMonth: new FormControl,
+      expYear: new FormControl,
+      cvc: new FormControl,
+      Email: new FormControl,
+      BuyerName: new FormControl,
+      streetAddress: new FormControl,
+      aptNumber: new FormControl,
+      City: new FormControl,
+      State: new FormControl,
+      Zip: new FormControl
+    });
+  }
+  onSubmit(form){
+    this.chargeCreditCard(form)
+    console.log("BLAH", form)
+  }
+
+
+
+}
