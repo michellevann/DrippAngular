@@ -20,7 +20,6 @@ import {
   MAT_DIALOG_DEFAULT_OPTIONS,
   MatDialogModule}
   from '@angular/material';
-import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaintingService } from './services/painting.service';
 import { ProductsService } from './services/products.service';
@@ -35,7 +34,6 @@ import { ProductsComponent, ProductsDialog } from './components/products/product
 
 const routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
   { path: 'products', component: ProductsComponent },
   { path: 'painting', canActivate: [AuthGuard], children: [
@@ -53,7 +51,6 @@ const routes = [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    RegistrationComponent,
     LoginComponent,
     PaintingIndexComponent,
     PaintingCreateComponent,
