@@ -31,8 +31,5 @@ export class PaintingService {
     console.log(id)
     return this._http.delete(`${ApiUrl}/Painting/${id}`, { headers: this.getHeaders() });
   }
-  private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
-  }
 }
 

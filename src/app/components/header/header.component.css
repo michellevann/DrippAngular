@@ -30,6 +30,7 @@ ul{
   top: 20px;
   position: absolute;
   -webkit-transformation: 0.5s ease;
+
 }
 li{
   width: 50px;
@@ -51,6 +52,7 @@ button:hover{
   body {
       height: 100%;
       background-image: linear-gradient(to bottom right, #ffbb91, #49071f );
+      padding: 50px;
   }
   
   body {
@@ -75,6 +77,8 @@ button:hover{
   
   .masthead-nav > li {
       display: inline-block;
+      padding-bottom: 8em;
+
       
   }
   
