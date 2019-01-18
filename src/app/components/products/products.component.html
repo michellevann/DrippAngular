@@ -1,63 +1,36 @@
-<p>
-  products works!
-</p>
-<h1>All Your Stuff, Girl</h1>
-<a mat-raised-button color="primary" routerLink="/painting/create">Create New</a>
-<hr>
+<!-- <form>
+  <input type="text" placeholder="Credit Card #" name="cardNumber">
+  <input type="text" placeholder="Expiration Month" name="expMonth">
+  <input type="text" placeholder="Expiration Year" name="expYear">
+  <input type="text" placeholder="CVC" name="cvc">
+  <button (click)="chargeCreditCard()">Submit</button>
+</form> -->
 
-<div>
-  <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-
-    <ng-container matColumnDef="Title">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize">Title</mat-header-cell>
-      <mat-cell *matCellDef="let painting">{{painting.title}} </mat-cell>
-    </ng-container>
-
-<ng-container matColumnDef="Size">
-  <mat-header-cell *matHeaderCellDef class="matColumnSize">Size</mat-header-cell>
-  <mat-cell *matCellDef="let painting">{{painting.size}}</mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="Color">
-  <mat-header-cell *matHeaderCellDef class="matColumnSize">Color</mat-header-cell>
-  <mat-cell *matCellDef="let painting"> {{painting.color}} </mat-cell>
-</ng-container>
-
-
-<ng-container matColumnDef="Price">
-  <mat-header-cell *matHeaderCellDef class="matColumnSize">Price</mat-header-cell>
-  <mat-cell *matCellDef="let painting">{{painting.price}}</mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="details">
-  <mat-header-cell *matHeaderCellDef class="matColumnSize">Details</mat-header-cell>
-  <mat-cell *matCellDef="let painting" routerLink="/painting/detail/{{painting.paintingEntityId}}">
-  <i class="material-icons">library_books</i>
-</mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="IsStarred">
-  <mat-header-cell *matHeaderCellDef>Sold?</mat-header-cell>
-  <mat-cell *matCellDef="let painting">
-    <button mat-icon-button disabled>
-      <i class="material-icons" (click)="isSold(painting, $event)" disabled>sold</i>
-    </button>
-  </mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="DateAdded">
-  <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
-  <mat-cell *matCellDef="let painting"> {{painting.dateAdded | date:'fullDate'}} </mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="buttons">
-  <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-  <mat-cell *matCellDef="let painting">
-    <i mat-icon class="material-icons" routerLink="/painting/edit/{{painting.PaintingEntityId}}"> edit </i>
-    <i class="material-icons" routerLink="/painting/delete/{{painting.PaintingEntityId"> delete </i>
-  </mat-cell>
-</ng-container>
-</mat-table>
+<div class="cards" *ngFor="let product of products$">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{ product.imageUrl }}">
+    <mat-card-content>
+      <p>${{ product.price }}</p>
+      <p>{{ product.size }}</p>
+      <p>{{ product.color }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="openDialog(product.price, product.title)">Buy Now!</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
+
+<!-- <div *ngFor="let product of products$">
+  <div>
+    <div>
+      <img src="{{ product.imageUrl }}">
+      <h1>{{ product.title }}</h1>
+      <h3>{{ product.price }}</h3>
+      <p>{{ product.size }}</p>
+      <p>{{ product.color }}</p>
+    </div>
+  </div>
+</div> -->

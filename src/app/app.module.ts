@@ -15,9 +15,12 @@ import {
   MatButtonModule, 
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule}
+  MatTableModule,
+  MatCardModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatDialogModule}
   from '@angular/material';
-import { RegistrationComponent } from './components/registration/registration.component';
+
 import { LoginComponent } from './components/login/login.component';
 import { PaintingService } from './services/painting.service';
 import { ProductsService } from './services/products.service';
@@ -28,11 +31,14 @@ import { HomeComponent } from './components/home/home.component';
 import { PaintingEditComponent } from './components/painting-edit/painting-edit.component';
 import { PaintingDeleteComponent } from './components/painting/painting-delete/painting-delete.component';
 import { AuthGuard } from './guards/auth.guard';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductsComponent, ProductsDialog } from './components/products/products.component';
+import { PurchaseService } from './services/purchase.service';
+import { PurchaseIndexComponent } from './components/purchase/purchase-index/purchase-index.component';
+import { PurchaseDetailComponent } from './components/purchase/purchase-detail/purchase-detail.component';
+import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/purchase-delete.component';
 
 const routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent},
   { path: 'products', component: ProductsComponent },
   { path: 'painting', canActivate: [AuthGuard], children: [
@@ -41,9 +47,8 @@ const routes = [
      { path: 'edit/:id', component: PaintingEditComponent},
      { path: 'detail/:id', component: PaintingDetailComponent},
      { path: 'delete/:id', component: PaintingDeleteComponent}
-    ]
-  },
-  { path: '**', component: HomeComponent }
+    ]},
+  { path: '**', component: HomeComponent },
 ];
   
 @NgModule({
@@ -51,14 +56,17 @@ const routes = [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    RegistrationComponent,
     LoginComponent,
     PaintingIndexComponent,
     PaintingCreateComponent,
     PaintingDetailComponent,
     PaintingEditComponent,
     PaintingDeleteComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductsDialog,
+    PurchaseIndexComponent,
+    PurchaseDetailComponent,
+    PurchaseDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,15 +80,24 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule,
+    MatDialogModule
   ],
   
   providers: [
     AuthService,
     PaintingService,
+    AuthGuard,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
     ProductsService,
-    AuthGuard
+    PurchaseService
   ],
+
+  entryComponents: [
+    ProductsDialog
+  ],
+
   bootstrap: [AppComponent]
  
 })
