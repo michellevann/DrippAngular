@@ -1,11 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProductService } from 'src/app/services/product.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { PaintingService } from 'src/app/services/painting.service';
 import { MatCardModule } from '@angular/material/card';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 
 import { ProductsService } from '../../services/products.service';
 import { Products } from '../../models/Products';
@@ -48,7 +48,7 @@ export class ProductsComponent implements OnInit {
   state: string;
   zip: number;
 
-  constructor(private http: HttpClient, private _productService: ProductService, private _router: Router, private _paintingService: PaintingService, public dialog: MatDialog) { }
+  constructor(private http: HttpClient, private _productService: ProductService, private _paintingService: PaintingService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this._paintingService.getPaintings().subscribe(
@@ -89,7 +89,7 @@ export class ProductsComponent implements OnInit {
 })
 export class ProductsDialog { 
   formThing: FormGroup;
-  constructor(private _productService: ProductService,
+  constructor(private _productService: ProductService, private _router: Router,
     public dialogRef: MatDialogRef<ProductsDialog>, private _form:FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
       this.createForm()
@@ -137,9 +137,8 @@ export class ProductsDialog {
     this._productService.createPurchaseToken(form).subscribe(data => {
       console.log(data)
       this.onNoClick();
-      // this._router.navigate(['/products']);
+      //this._router.navigate(['/products']);
     });
-
   }
 
   createForm(){
@@ -159,6 +158,19 @@ export class ProductsDialog {
   }
   onSubmit(form){
     this.chargeCreditCard(form)
-    console.log("BLAH", form)
   }
 }
+// @Component({
+//   selector: 'app-products-dialog',
+//   templateUrl: './products.component.dialog.html',
+// })
+
+// export class SnackBar {
+//   constructor(public snackBar: MatSnackBar) {}
+
+//   openSnackBar(message: string, action: string) {
+//     this.snackBar.open(message, action, {
+//       duration: 3000,
+//     });
+//   }
+// }
