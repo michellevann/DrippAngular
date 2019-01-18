@@ -1,0 +1,47 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="formThing">
+    <div mat-dialog-content>
+        <h1 mat-dialog-title>Purchase Information</h1>
+        <p>{{data.title}}</p>
+        <p>${{data.price}}</p>
+        <mat-form-field>
+            <input matInput placeholder="Credit Card #" formControlName="cardNumber" type="CardNumber" required />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Expiration Month" formControlName="expMonth" type="ExpMonth" required />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Expiration Year" formControlName="expYear" type="ExpYear" required />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CVC" formControlName="cvc" type="CVC" required />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="Email" type="Email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Name" formControlName="BuyerName" type="Name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Street Address" formControlName="streetAddress" type="StreetAddress">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apt Number" formControlName="aptNumber" type="AptNumber">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="City" formControlName="City" type="City">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="State" formControlName="State" type="State">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Zip Code" formControlName="Zip" type="Zip">
+        </mat-form-field>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-button class="nav-btn" type="submit">Submit</button>
+            <!-- <button mat-button (click)="onSubmit()">Submit Info</button> -->
+        </div>
+    </div>
+</form>

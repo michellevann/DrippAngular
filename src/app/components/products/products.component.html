@@ -1,0 +1,36 @@
+<!-- <form>
+  <input type="text" placeholder="Credit Card #" name="cardNumber">
+  <input type="text" placeholder="Expiration Month" name="expMonth">
+  <input type="text" placeholder="Expiration Year" name="expYear">
+  <input type="text" placeholder="CVC" name="cvc">
+  <button (click)="chargeCreditCard()">Submit</button>
+</form> -->
+
+<div class="cards" *ngFor="let product of products$">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{ product.imageUrl }}">
+    <mat-card-content>
+      <p>${{ product.price }}</p>
+      <p>{{ product.size }}</p>
+      <p>{{ product.color }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="openDialog(product.price, product.title)">Buy Now!</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- <div *ngFor="let product of products$">
+  <div>
+    <div>
+      <img src="{{ product.imageUrl }}">
+      <h1>{{ product.title }}</h1>
+      <h3>{{ product.price }}</h3>
+      <p>{{ product.size }}</p>
+      <p>{{ product.color }}</p>
+    </div>
+  </div>
+</div> -->
