@@ -20,6 +20,7 @@ import {
   MAT_DIALOG_DEFAULT_OPTIONS,
   MatDialogModule}
   from '@angular/material';
+
 import { LoginComponent } from './components/login/login.component';
 import { PaintingService } from './services/painting.service';
 import { ProductsService } from './services/products.service';
@@ -31,6 +32,10 @@ import { PaintingEditComponent } from './components/painting-edit/painting-edit.
 import { PaintingDeleteComponent } from './components/painting/painting-delete/painting-delete.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProductsComponent, ProductsDialog } from './components/products/products.component';
+import { PurchaseService } from './services/purchase.service';
+import { PurchaseIndexComponent } from './components/purchase/purchase-index/purchase-index.component';
+import { PurchaseDetailComponent } from './components/purchase/purchase-detail/purchase-detail.component';
+import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/purchase-delete.component';
 
 const routes = [
   { path: 'home', component: HomeComponent },
@@ -58,7 +63,10 @@ const routes = [
     PaintingEditComponent,
     PaintingDeleteComponent,
     ProductsComponent,
-    ProductsDialog
+    ProductsDialog,
+    PurchaseIndexComponent,
+    PurchaseDetailComponent,
+    PurchaseDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +90,8 @@ const routes = [
     PaintingService,
     AuthGuard,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
-    ProductsService
+    ProductsService,
+    PurchaseService
   ],
 
   entryComponents: [
