@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -19,7 +21,6 @@ import {
   MatDialogModule}
   from '@angular/material';
 
-import { LoginComponent } from './components/login/login.component';
 import { PaintingService } from './services/painting.service';
 import { ProductsService } from './services/products.service';
 import { PaintingIndexComponent } from './components/painting/painting-index/painting-index.component';
@@ -37,7 +38,7 @@ import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/p
 
 const routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent},
+  { path: 'admin', component: LoginComponent},
   { path: 'products', component: ProductsComponent },
   { path: 'painting', canActivate: [AuthGuard], children: [
      { path: 'create', component: PaintingCreateComponent},
@@ -52,9 +53,9 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     HeaderComponent,
     HomeComponent,
-    LoginComponent,
     PaintingIndexComponent,
     PaintingCreateComponent,
     PaintingDetailComponent,

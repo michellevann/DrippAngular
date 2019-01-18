@@ -2,32 +2,26 @@
 <hr>
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="paintingForm">
   <div>
-      <div>
-          <mat-form-field>
-            <input matInput placeholder="Artist" formControlName="Artist" type="Artist" required/>
-          </mat-form-field>
-      </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Title" formControlName="Title" type="Title" required/>
+        <input matInput placeholder="Title" formControlName="Title" type="string" required/>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Size" formControlName="Size" type="Size" required/>
+        <input matInput placeholder="Size" formControlName="Size" type="string" required/>
       </mat-form-field>
     </div>
     <div>
         <mat-form-field>
-          <input matInput placeholder="Color" formControlName="Color" type="String" required/>
+          <input matInput placeholder="Color" formControlName="Color" type="string" required/>
         </mat-form-field>
     </div>
     <div>
         <mat-form-field>
-          <input matInput placeholder="Price" formControlName="Price" type="Price" required/>
+          <input matInput placeholder="Price" formControlName="Price" type="string" required/>
         </mat-form-field>
     </div>
-
     <button type="button" md-button (click)="imgFileInput.click()">Add a photo</button>
     <input hidden type="file" #imgFileInput (change)="onFileChanged($event)">
     
