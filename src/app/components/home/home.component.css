@@ -95,12 +95,11 @@ body{
     top: 1200px;
     margin-right: 600px;
 }
-#about{
-    position: relative;
-    top: 500px;
-}
 #container{
     margin: 10em;
     text-align: center;
-    
+}
+#contact{
+    padding: 3em;
+
 }
