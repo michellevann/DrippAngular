@@ -1,10 +1,14 @@
-<app-header></app-header>
 <h1>All Your Sales, Girl!</h1>
 <hr>
 <div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="BuyerName">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize">Buyer Name</mat-header-cell>
+        <mat-cell *matCellDef="let purchase">{{purchase.buyerName}} </mat-cell>
+    </ng-container>
 
     <ng-container matColumnDef="StreetAddress">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Street Address</mat-header-cell>
@@ -20,6 +24,7 @@
       <mat-header-cell *matHeaderCellDef class="matColumnSize">City</mat-header-cell>
       <mat-cell *matCellDef="let purchase">{{purchase.city}}</mat-cell>
     </ng-container>
+
     <ng-container matColumnDef="State">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">State</mat-header-cell>
       <mat-cell *matCellDef="let purchase">{{purchase.state}}</mat-cell>
@@ -29,18 +34,18 @@
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Zip</mat-header-cell>
       <mat-cell *matCellDef="let purchase"> {{purchase.zip}} </mat-cell>
     </ng-container>
+
     <ng-container matColumnDef="BuyerEmail">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Email</mat-header-cell>
       <mat-cell *matCellDef="let purchase"> {{purchase.buyerEmail}} </mat-cell>
     </ng-container>
+   
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Details</mat-header-cell>
-      <mat-cell *matCellDef="let purchase" routerLink="/purchase/detail/{{purchase.purchaseId}}">
-        <i class="material-icons">library_books</i>
+      <mat-cell *matCellDef="let purchase" class="matcolumnSize">
+        <i class="material-icons" routerLink="/purchase/detail/{{purchase.purchaseEntityId}}">library_books</i>
       </mat-cell>
     </ng-container>
-  </mat-table>
-</div>
 
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
@@ -48,3 +53,5 @@
         <i class="material-icons" routerLink="/purchase/delete/{{purchase.purchaseId}}"> delete </i>
       </mat-cell>
     </ng-container>
+  </mat-table>
+</div>
