@@ -47,7 +47,8 @@ export class ProductsComponent implements OnInit {
   state: string;
   zip: number;
 
-  constructor(private http: HttpClient, private _productService: ProductService, private _paintingService: PaintingService, public dialog: MatDialog) { }
+  constructor(private http: HttpClient, private _productService: ProductService, 
+    private _paintingService: PaintingService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this._paintingService.getPaintings().subscribe(
@@ -57,7 +58,8 @@ export class ProductsComponent implements OnInit {
 
   openDialog(dollar, title): void {
     const dialogRef = this.dialog.open(ProductsDialog, {
-      width: '250px',
+      width: '500px',
+      height: '550px',
       data: {
         cardNumber: this.cardNumber,
         expMonth: this.expMonth,
@@ -85,7 +87,9 @@ export class ProductsComponent implements OnInit {
 @Component({
   selector: 'app-products-dialog',
   templateUrl: './products.component.dialog.html',
+  styleUrls: ['./products.component.dialog.css']
 })
+
 export class ProductsDialog { 
   formThing: FormGroup;
   constructor(private _productService: ProductService, private _router: Router,
@@ -167,9 +171,7 @@ export class ProductsDialog {
 // export class SnackBar {
 //   constructor(public snackBar: MatSnackBar) {}
 
-//   openSnackBar(message: string, action: string) {
-//     this.snackBar.open(message, action, {
-//       duration: 3000,
-//     });
+//   openSnackBar(message: string) {
+//     this.snackBar.open(message);
 //   }
 // }
