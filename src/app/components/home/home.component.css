@@ -92,11 +92,10 @@ body{
 }
 .wrapper{
     position: relative;
-    top: 950px;
+    top: 1200px;
     margin-right: 600px;
     float: left;
 }
-
 #container{
     margin: 10em;
     text-align: center;
