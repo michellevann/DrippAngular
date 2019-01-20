@@ -35,13 +35,12 @@ import { PurchaseService } from './services/purchase.service';
 import { PurchaseIndexComponent } from './components/purchase/purchase-index/purchase-index.component';
 import { PurchaseDetailComponent } from './components/purchase/purchase-detail/purchase-detail.component';
 import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/purchase-delete.component';
-import { WheelComponent } from './components/wheel/wheel.component';
+
 
 const routes = [
   { path: 'home', component: HomeComponent },
   { path: 'admin', component: LoginComponent},
   { path: 'products', component: ProductsComponent },
-  { path: 'wheel', component: WheelComponent},
   { path: 'purchase', canActivate: [AuthGuard], children: [
     {path:'index', component: PurchaseIndexComponent},
     {path: 'detail', component: PurchaseDetailComponent},
@@ -72,8 +71,7 @@ const routes = [
     ProductsDialog,
     PurchaseIndexComponent,
     PurchaseDetailComponent,
-    PurchaseDeleteComponent,
-    WheelComponent,
+    PurchaseDeleteComponent
   ],
   imports: [
     BrowserModule,
