@@ -6,7 +6,6 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { PaintingService } from 'src/app/services/painting.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
-
 import { ProductsService } from '../../services/products.service';
 import { Products } from '../../models/Products';
 import { MatTableDataSource } from '@angular/material';
@@ -129,6 +128,7 @@ export class ProductsDialog {
         console.log(response.error.message);
       }
     });
+    this.onNoClick();
   }
 
   chargeCard(form) {
@@ -136,7 +136,6 @@ export class ProductsDialog {
     console.log("Charge card method")
     this._productService.createPurchaseToken(form).subscribe(data => {
       console.log(data)
-      this.onNoClick();
       //this._router.navigate(['/products']);
     });
   }
