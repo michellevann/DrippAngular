@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ExtraOptions } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
@@ -18,7 +18,8 @@ import {
   MatTableModule,
   MatCardModule,
   MAT_DIALOG_DEFAULT_OPTIONS,
-  MatDialogModule}
+  MatDialogModule,
+  MatSnackBar}
   from '@angular/material';
 
 import { PaintingService } from './services/painting.service';
@@ -55,7 +56,7 @@ const routes = [
     ]},
   { path: '**', component: HomeComponent },
 ];
-  
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +73,7 @@ const routes = [
     PurchaseIndexComponent,
     PurchaseDetailComponent,
     PurchaseDeleteComponent
+
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,8 @@ const routes = [
     MatInputModule,
     MatTableModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    //MatSnackBar
   ],
   
   providers: [
