@@ -6,7 +6,6 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { PaintingService } from 'src/app/services/painting.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
-
 import { ProductsService } from '../../services/products.service';
 import { Products } from '../../models/Products';
 import { MatTableDataSource } from '@angular/material';
@@ -48,7 +47,8 @@ export class ProductsComponent implements OnInit {
   state: string;
   zip: number;
 
-  constructor(private http: HttpClient, private _productService: ProductService, private _paintingService: PaintingService, public dialog: MatDialog) { }
+  constructor(private http: HttpClient, private _productService: ProductService, 
+    private _paintingService: PaintingService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this._paintingService.getPaintings().subscribe(
@@ -58,7 +58,8 @@ export class ProductsComponent implements OnInit {
 
   openDialog(dollar, title): void {
     const dialogRef = this.dialog.open(ProductsDialog, {
-      width: '250px',
+      width: '500px',
+      height: '550px',
       data: {
         cardNumber: this.cardNumber,
         expMonth: this.expMonth,
@@ -86,7 +87,9 @@ export class ProductsComponent implements OnInit {
 @Component({
   selector: 'app-products-dialog',
   templateUrl: './products.component.dialog.html',
+  styleUrls: ['./products.component.dialog.css']
 })
+
 export class ProductsDialog { 
   formThing: FormGroup;
   constructor(private _productService: ProductService, private _router: Router,
@@ -129,6 +132,7 @@ export class ProductsDialog {
         console.log(response.error.message);
       }
     });
+    this.onNoClick();
   }
 
   chargeCard(form) {
@@ -136,7 +140,6 @@ export class ProductsDialog {
     console.log("Charge card method")
     this._productService.createPurchaseToken(form).subscribe(data => {
       console.log(data)
-      this.onNoClick();
       //this._router.navigate(['/products']);
     });
   }
@@ -168,9 +171,7 @@ export class ProductsDialog {
 // export class SnackBar {
 //   constructor(public snackBar: MatSnackBar) {}
 
-//   openSnackBar(message: string, action: string) {
-//     this.snackBar.open(message, action, {
-//       duration: 3000,
-//     });
+//   openSnackBar(message: string) {
+//     this.snackBar.open(message);
 //   }
 // }
