@@ -39,6 +39,7 @@ import { PurchaseDetailComponent } from './components/purchase/purchase-detail/p
 import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/purchase-delete.component';
 import { getLocaleDateTimeFormat } from '@angular/common';
 
+
 const routes = [
   { path: 'home', component: HomeComponent },
   { path: 'admin', component: LoginComponent},
@@ -73,8 +74,8 @@ const routes = [
     ProductsDialog,
     PurchaseIndexComponent,
     PurchaseDetailComponent,
-    PurchaseDeleteComponent,
-    //SnackBar
+    PurchaseDeleteComponent
+
   ],
   imports: [
     BrowserModule,
