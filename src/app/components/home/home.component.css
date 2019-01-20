@@ -94,6 +94,7 @@ body{
     position: relative;
     top: 950px;
     margin-right: 600px;
+    float: left;
 }
 
 #container{
@@ -103,4 +104,10 @@ body{
 #contact{
     padding: 3em;
 
+}
+#about{
+    float: right;
+}
+#wheel{
+    padding: 10em;
 }
