@@ -17,7 +17,7 @@ export class PurchaseIndexComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Purchase>(purchase);
     });
   }
-  columnNames = ['details', 'BuyerName', 'StreetAddress', 'AptNumber', 'City', 'State', 'Zip', 'BuyerEmail', 'PurchaseDate'];
+  columnNames = ['details', 'BuyerName', 'StreetAddress', 'AptNumber', 'City', 'State', 'Zip', 'BuyerEmail'];
   dataSource: MatTableDataSource<Purchase>
 }
 
