@@ -134,8 +134,11 @@ p{
 }
 .contactContainer{
     border: 10px solid white;
-    bottom: 900px;
+    position: relative;
+    padding-top: 15em;  
 }
+
+
 .carouselContainer{
     width: 80%;
     margin: auto;
@@ -331,7 +334,4 @@ p{
     position: relative;
     bottom: 500px;
     left: 940px;
-}
-.container{
-    border: 10px solid white;
 }
