@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Painting } from 'src/app/models/Painting';
 import { PaintingService } from 'src/app/services/painting.service';
 
-
 @Component({
   selector: 'app-painting-detail',
   templateUrl: './painting-detail.component.html',

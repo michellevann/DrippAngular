@@ -9,6 +9,7 @@ import { PurchaseService } from 'src/app/services/purchase.service'
   styleUrls: ['./purchase-detail.component.css']
 })
 export class PurchaseDetailComponent implements OnInit {
+  
   purchase: Purchase;
 
   constructor(private _activatedRoute: ActivatedRoute, private _purchaseService: PurchaseService) { }

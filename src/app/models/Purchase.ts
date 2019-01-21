@@ -1,6 +1,7 @@
 export interface Purchase {
     PaintingEntityId: number;
     PurchaseEntityId: number;
+    PurchaseDate: Date;
     BuyerName: string;
     BuyerEmail: string;
     StreetAddress: string;

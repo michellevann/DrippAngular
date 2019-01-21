@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PurchaseService } from 'src/app/services/purchase.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Painting } from 'src/app/models/Painting';
 import { Purchase } from 'src/app/models/Purchase';
 
 
