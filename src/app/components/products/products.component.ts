@@ -106,10 +106,10 @@ export class ProductsDialog {
     const formData = new FormData();
     console.log(form.value);
     (<any>window).Stripe.card.createToken({
-      number: 4242424242424242,
-      exp_month: 12, //form.value.expMonth
-      exp_year: 2019,
-      cvc: 123,
+      number: form.value.cardNumber,
+      exp_month: form.value.expMonth,
+      exp_year: form.value.expYear,
+      cvc: form.value.cvc,
     }, (status: number, response: any) => {
       if (status === 200) {
         let token = response.id;
