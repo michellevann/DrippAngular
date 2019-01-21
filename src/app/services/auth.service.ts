@@ -4,6 +4,7 @@ import { Token } from '../models/Token';
 import { LoginUser } from '../models/LoginUser';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 const Api_Url = 'https://localhost:44311';
@@ -15,10 +16,16 @@ const Api_Url = 'https://localhost:44311';
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
-  
 
-  constructor(private _http: HttpClient, private _router: Router) { }
-
+  constructor(private _http: HttpClient, 
+    private _router: Router,
+    private _jwtHelperService: JwtHelperService
+    ) { }
+    
+  loggedIn(){
+    const token = localStorage.getItem('id_token');
+    return !this._jwtHelperService.isTokenExpired(token);
+  }  
   login(loginInfo: LoginUser){
     return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
       localStorage.setItem('id_token', token.token);

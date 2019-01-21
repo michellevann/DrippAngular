@@ -4,6 +4,7 @@ import { RouterModule, ExtraOptions } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -94,6 +95,12 @@ const routes = [
     MatTableModule,
     MatCardModule,
     MatDialogModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    })
+ 
     //MatSnackBar
   ],
   
@@ -114,3 +121,8 @@ const routes = [
  
 })
 export class AppModule { }
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+ }
+ 
