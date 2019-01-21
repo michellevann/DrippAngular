@@ -43,6 +43,11 @@ currentUser(): Observable<Object> {
 logout(): Observable<Object> {
   localStorage.clear();
   this.isLoggedIn.next(false);
+  const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+
+  this._http.post(`${Api_Url}/api/Auth/Logout`, {headers: authHeader});
+  this._router.navigate(['/admin'])
+  window.location.reload();
 
   return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
 }
@@ -51,3 +56,5 @@ private setHeader(): HttpHeaders {
   return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
 }
 }
+
+

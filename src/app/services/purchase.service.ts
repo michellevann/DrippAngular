@@ -22,4 +22,7 @@ export class PurchaseService {
   deletePurchase(id: number) {
     return this._http.delete(`${ApiUrl}/Purchase/${id}`, { headers: this.getHeaders() });
   }
+  getPaintingById(id:string){
+    return this._http.get(`${ApiUrl}/Painting/${id}`, { headers: this.getHeaders() });
+  } 
 }
