@@ -45,10 +45,10 @@
       <mat-cell *matCellDef="let purchase"> {{purchase.buyerEmail}} </mat-cell>
     </ng-container>
    
-    <ng-container matColumnDef="PurchaseDate">
-        <mat-header-cell *matHeaderCellDef>Purchase Date</mat-header-cell>
-        <mat-cell *matCellDef="let painting"> {{purchase.purchaseDate | date:'fullDate'}} </mat-cell>
-      </ng-container>
+    <!-- <ng-container matColumnDef="PurchaseDate">
+        <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
+        <mat-cell *matCellDef="let painting"> {{purchase.dateAdded | date:'fullDate'}} </mat-cell>
+    </ng-container> -->
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Details</mat-header-cell>

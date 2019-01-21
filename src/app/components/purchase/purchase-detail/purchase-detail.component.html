@@ -4,27 +4,27 @@
 <div *ngIf="purchase">
     <div>
         <label for="">Buyer: </label>
-        <span>{{purchase.buyerName}}</span>
+        <span> {{purchase.buyerName}}</span>
     </div>
     <div>
         <label for="">Email: </label>
-        <span>{{purchase.buyerEmail}}</span>
+        <span> {{purchase.buyerEmail}}</span>
     </div>
     <div>
         <label for="">Title: </label>
-        <span>{{purchase.Title}}</span>
+        <span> {{purchase.Title}}</span>
     </div>
     <div>
         <label for="">Price: </label>
-        <span>${{purchase.price}}</span>
+        <span> ${{purchase.price}}</span>
     </div>
     <div>
         <label for="">Street Address: </label>
-        <span>${{purchase.streetAddress}}</span>
+        <span> {{purchase.streetAddress}}</span>
     </div>
     <div>
         <label for="">Apt Number: </label>
-        <span>{{purchase.aptNumber}}</span>
+        <span> {{purchase.aptNumber}}</span>
     </div>
     <div>
         <label for="">City: </label>
@@ -36,10 +36,10 @@
     </div>
     <div>
         <label for="">Zip: </label>
-        <span>${{purchase.zip}}</span>
+        <span> {{purchase.zip}}</span>
     </div>
 
 </div>
 
 
-<button mat-button color="primary" routerLink="/purchase/index">Back to List</button>
+<button mat-button color="primary" routerLink="/purchase">Back to List</button>
