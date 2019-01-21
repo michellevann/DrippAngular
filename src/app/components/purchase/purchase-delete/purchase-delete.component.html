@@ -2,43 +2,42 @@
 <h4> Are you sure you want to delete this sale?</h4>
 <hr>
 <div *ngIf="purchase">
-  <div>
-    <label for="">Buyer: </label>
-    <span>{{purchase.buyerName}}</span>
+  <div class="container">
+    <div style="padding-top: 20px;">
+      <label for="">Buyer: </label>
+      <span> {{purchase.buyerName}}</span>
+    </div>
+    <div>
+      <label for="">Email: </label>
+      <span> {{purchase.buyerEmail}}</span>
+    </div>
+    <div>
+      <label for="">Title: </label>
+      <span> {{purchase.title}}</span>
+    </div>
+    <div>
+      <label for="">Price: </label>
+      <span> ${{purchase.price}}</span>
+    </div>
+    <div>
+      <label for="">StreetAddress: </label>
+      <span> {{purchase.streetAddress}}</span>
+    </div>
+    <div>
+      <label for="">City: </label>
+      <span> {{purchase.city}}</span>
+    </div>
+    <div>
+      <label for="">State: </label>
+      <span> {{purchase.state}}</span>
+    </div>
+    <div>
+      <label for="">Zip: </label>
+      <span> {{purchase.zip}}</span>
+    </div>
+    <div style="padding-bottom: 5px; text-align: center;">
+      <button mat-button color="warn" (click)="onDelete()" type="submit">Delete</button>
+      <button mat-button color="primary" routerLink="/purchase">Back to list</button>
+    </div>
   </div>
-  <div>
-    <label for="">Email: </label>
-    <span>{{purchase.buyerEmail}}</span>
-  </div>
-  <div>
-    <label for="">Title: </label>
-    <span>{{purchase.title}}</span>
-  </div>
-  <div>
-    <label for="">Price: </label>
-    <span>{{purchase.price}}</span>
-  </div>
-  <div>
-    <label for="">StreetAddress: </label>
-    <span>{{purchase.streetAddress}}</span>
-  </div>
-  <div>
-    <label for="">City: </label>
-    <span>{{purchase.city}}</span>
-  </div>
-  <div>
-    <label for="">State: </label>
-    <span>{{purchase.state}}</span>
-  </div>
-  <div>
-    <label for="">Zip: </label>
-    <span>{{purchase.zip}}</span>
-  </div>
-  <div>
-    <label for="">BuyerEmail: </label>
-    <span>{{purchase.buyerEmail}}</span>
-  </div>
-
 </div>
-<button mat-button color="warn" (click)="onDelete()" type="submit">Delete</button>
-<button mat-button color="primary" routerLink="/purchase">Back to list</button>
