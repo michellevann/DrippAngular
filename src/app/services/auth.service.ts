@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { RegisterUser } from '../models/RegisterUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
 import { LoginUser } from '../models/LoginUser';
@@ -19,11 +18,6 @@ export class AuthService {
   
 
   constructor(private _http: HttpClient, private _router: Router) { }
-
-  register(regUserData: RegisterUser){
-    
-    return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData);
-  }
 
   login(loginInfo: LoginUser){
     return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {

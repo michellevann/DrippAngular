@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ExtraOptions } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
@@ -18,7 +18,9 @@ import {
   MatTableModule,
   MatCardModule,
   MAT_DIALOG_DEFAULT_OPTIONS,
-  MatDialogModule}
+  MatDialogModule,
+  MatSnackBar,
+  DateAdapter}
   from '@angular/material';
 
 import { PaintingService } from './services/painting.service';
@@ -36,6 +38,8 @@ import { PurchaseIndexComponent } from './components/purchase/purchase-index/pur
 import { PurchaseDetailComponent } from './components/purchase/purchase-detail/purchase-detail.component';
 import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/purchase-delete.component';
 import { HeaderHomeComponent } from './components/header-home/header-home.component';
+
+import { getLocaleDateTimeFormat } from '@angular/common';
 
 
 const routes = [
@@ -56,7 +60,7 @@ const routes = [
     ]},
   { path: '**', component: HomeComponent },
 ];
-  
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +78,7 @@ const routes = [
     PurchaseDetailComponent,
     PurchaseDeleteComponent,
     HeaderHomeComponent
+
   ],
   imports: [
     BrowserModule,
@@ -89,7 +94,8 @@ const routes = [
     MatInputModule,
     MatTableModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    //MatSnackBar
   ],
   
   providers: [
