@@ -46,7 +46,7 @@ export class PaintingCreateComponent implements OnInit {
 
     console.log(formData.get("Image"))
     this._paintingService.createPainting(formData).subscribe(data => {
-      this._router.navigate(['/painting/index']);
+      this._router.navigate(['/painting']);
     });
   }
 }
