@@ -2,44 +2,45 @@
 <hr>
 
 <div *ngIf="purchase">
-    <div>
-        <label for="">Buyer: </label>
-        <span> {{purchase.buyerName}}</span>
+    <div class="container">
+        <div style="padding-top: 20px;">
+            <label for="">Buyer: </label>
+            <span> {{purchase.buyerName}}</span>
+        </div>
+        <div>
+            <label for="">Email: </label>
+            <span> {{purchase.buyerEmail}}</span>
+        </div>
+        <div>
+            <label for="">Title: </label>
+            <span> {{purchase.title}}</span>
+        </div>
+        <div>
+            <label for="">Price: </label>
+            <span> ${{purchase.price}}</span>
+        </div>
+        <div>
+            <label for="">Street Address: </label>
+            <span> {{purchase.streetAddress}}</span>
+        </div>
+        <div>
+            <label for="">Apt Number: </label>
+            <span> {{purchase.aptNumber}}</span>
+        </div>
+        <div>
+            <label for="">City: </label>
+            <span> {{purchase.city}}</span>
+        </div>
+        <div>
+            <label for="">State: </label>
+            <span> {{purchase.state}}</span>
+        </div>
+        <div>
+            <label for="">Zip: </label>
+            <span> {{purchase.zip}}</span>
+        </div>
+        <div style="padding-bottom: 20px; text-align: center;">
+            <button mat-button color="primary" routerLink="/purchase">Back to List</button>
+        </div>
     </div>
-    <div>
-        <label for="">Email: </label>
-        <span> {{purchase.buyerEmail}}</span>
-    </div>
-    <div>
-        <label for="">Title: </label>
-        <span> {{purchase.Title}}</span>
-    </div>
-    <div>
-        <label for="">Price: </label>
-        <span> ${{purchase.price}}</span>
-    </div>
-    <div>
-        <label for="">Street Address: </label>
-        <span> {{purchase.streetAddress}}</span>
-    </div>
-    <div>
-        <label for="">Apt Number: </label>
-        <span> {{purchase.aptNumber}}</span>
-    </div>
-    <div>
-        <label for="">City: </label>
-        <span>${{purchase.city}}</span>
-    </div>
-    <div>
-        <label for="">State: </label>
-        <span>${{purchase.state}}</span>
-    </div>
-    <div>
-        <label for="">Zip: </label>
-        <span> {{purchase.zip}}</span>
-    </div>
-
 </div>
-
-
-<button mat-button color="primary" routerLink="/purchase">Back to List</button>
