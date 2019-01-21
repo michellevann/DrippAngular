@@ -35,6 +35,7 @@ import { PurchaseService } from './services/purchase.service';
 import { PurchaseIndexComponent } from './components/purchase/purchase-index/purchase-index.component';
 import { PurchaseDetailComponent } from './components/purchase/purchase-detail/purchase-detail.component';
 import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/purchase-delete.component';
+import { HeaderHomeComponent } from './components/header-home/header-home.component';
 
 
 const routes = [
@@ -71,7 +72,8 @@ const routes = [
     ProductsDialog,
     PurchaseIndexComponent,
     PurchaseDetailComponent,
-    PurchaseDeleteComponent
+    PurchaseDeleteComponent,
+    HeaderHomeComponent
   ],
   imports: [
     BrowserModule,
