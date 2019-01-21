@@ -88,31 +88,29 @@ p{
         background-position: 719px 0;
     }
 }
-.wrapper{
-    position: relative;
-    margin-right: 600px;
-    float: left;
-}
-#container{
-    margin: 10em;
-    text-align: center;
-}
-#contact{
-    padding: 3em;
 
-}
+
 #about{
     text-align: center;
+    padding-top: 3em;
 }
-.parallax{
-  background-image: url('/assets/img/ocean.jpg');
+.aboutSection{
+    background-color: rgb(253, 204, 220);
+    width: 600px;
+    border: 35px solid rgba(237, 237, 245, 0.555);
+    padding: 25px;
+    margin: 25px;
+
+}
+/* .parallax{
+  background-image: url('/assets/img/river.jpg');
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   
-}
+} */
 /* .navbar-nav > li{
     display: inline-block;
 }
@@ -132,4 +130,30 @@ p{
     color: white;
     text-shadow: 2px 2px rgb(228, 178, 98);
 
+}
+.carouselContainer{
+    width: 80%;
+    margin: auto;
+    padding-top: 1em;
+    
+    
+}
+.carousel-inner > .carousel-item > img {
+            border: 70px solid rgba(237, 237, 245, 0.692);
+            width: 80%;
+            margin: auto;
+        }
+
+.pulse{
+    position: relative;
+    bottom: 217px;
+    left: 940px;
+}
+.contactContainer{
+    bottom: 900px;
+}
+h3{
+    color: #31B4D9;
+    font-size: 40px;
+    font-weight: bold;
 }
