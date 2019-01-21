@@ -129,14 +129,18 @@ p{
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px rgb(228, 178, 98);
+  
 
+}
+.contactContainer{
+    border: 10px solid white;
+    bottom: 900px;
 }
 .carouselContainer{
     width: 80%;
     margin: auto;
     padding-top: 1em;
-    
-    
+   
 }
 .carousel-inner > .carousel-item > img {
             border: 70px solid rgba(237, 237, 245, 0.692);
@@ -144,16 +148,190 @@ p{
             margin: auto;
         }
 
-.pulse{
+        .contactContainer{
+            bottom: 900px;
+        }
+        h3{
+            color: #31B4D9;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .pulse2 {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("/assets/img/ocean.jpg");
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+            border-radius: 60%;
+            box-shadow: inset 0 0 40px rgba(193, 66, 66, 0.5);
+}
+
+.pulse2 span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #8ccfd1;
+    box-sizing: border-box;
+    animation: animate 6s linear infinite;
+}
+
+.pulse2 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.pulse2 span:nth-child(2) {
+    animation-delay: -4s;
+}
+
+.pulse2 span:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes animate {
+    0% {
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes animateEarth {
+    0% {
+        background-position: 0 0;
+    }
+    
+    100% {
+        background-position: 719px 0;
+    }
+}
+
+@keyframes animatebg {
+    0% {
+        background-position: 0 0;
+    }
+    
+    100% {
+        background-position: 719px 0;
+    }
+}
+
+.pulse3 {
     position: relative;
-    bottom: 217px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("/assets/img/heart.jpg");
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    border-radius: 60%;
+    box-shadow: inset 0 0 40px rgba(193, 66, 66, 0.5);
+}
+
+.pulse3 span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #8ccfd1;
+    box-sizing: border-box;
+    animation: animate 6s linear infinite;
+}
+
+.pulse3 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.pulse3 span:nth-child(2) {
+    animation-delay: -4s;
+}
+
+.pulse3 span:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes animate {
+    0% {
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes animateEarth {
+    0% {
+        background-position: 0 0;
+    }
+    
+    100% {
+        background-position: 719px 0;
+    }
+}
+
+@keyframes animatebg {
+    0% {
+        background-position: 0 0;
+    }
+    
+    100% {
+        background-position: 719px 0;
+    }
+}
+/* sad-original */
+.pulse{                   
+    position: relative;
+    bottom: 250px;
     left: 940px;
 }
-.contactContainer{
-    bottom: 900px;
+/* ocean */
+.pulse2{
+    position: relative;
+    bottom: 100px;
+    left: 320px;  
 }
-h3{
-    color: #31B4D9;
-    font-size: 40px;
-    font-weight: bold;
+/* heart */
+.pulse3{
+    position: relative;
+    bottom: 500px;
+    left: 940px;
+}
+.container{
+    border: 10px solid white;
 }
