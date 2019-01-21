@@ -1,7 +1,7 @@
 <h1>Details</h1>
 <hr>
 
-<div *ngIf="purchase">
+<div *ngIf="painting">
   <div>
     <label for="">Title: </label>
     <span>{{painting.title}}</span>
@@ -18,10 +18,10 @@
     <label for="">Color: </label>
     <span>{{painting.color}}</span>
   </div>
-  <div>
+  <!-- <div>
     <label for="">Date Added: </label>
     <span>{{painting.dateAdded | date: 'fullDate'}}</span>
-  </div>
+  </div> -->
   <div>
     <img src="{{ painting.imageUrl }}" width="300" height="300">
   </div>
