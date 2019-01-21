@@ -133,12 +133,15 @@ p{
 
 }
 .contactContainer{
-    border: 10px solid white;
     position: relative;
     padding-top: 15em;  
 }
-
-
+#contactForm{
+    padding-left: 35em;
+}
+/* label {
+    color:
+} */
 .carouselContainer{
     width: 80%;
     margin: auto;
