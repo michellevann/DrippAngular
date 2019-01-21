@@ -46,14 +46,15 @@ const routes = [
   { path: 'home', component: HomeComponent },
   { path: 'admin', component: LoginComponent},
   { path: 'products', component: ProductsComponent },
+
   { path: 'purchase', canActivate: [AuthGuard], children: [
-    {path:'index', component: PurchaseIndexComponent},
-    {path: 'detail', component: PurchaseDetailComponent},
-    {path: 'delete', component: PurchaseDeleteComponent}
+    {path:'', component: PurchaseIndexComponent},
+    {path: 'detail/:id', component: PurchaseDetailComponent},
+    {path: 'delete/:id', component: PurchaseDeleteComponent}
   ]},
   { path: 'painting', canActivate: [AuthGuard], children: [
+     { path: '', component: PaintingIndexComponent},
      { path: 'create', component: PaintingCreateComponent},
-     { path: 'index', component: PaintingIndexComponent},
      { path: 'edit/:id', component: PaintingEditComponent},
      { path: 'detail/:id', component: PaintingDetailComponent},
      { path: 'delete/:id', component: PaintingDeleteComponent}
