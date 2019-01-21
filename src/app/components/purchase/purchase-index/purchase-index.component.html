@@ -9,6 +9,21 @@
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    
+    <ng-container matColumnDef="PurchaseDate">
+        <mat-header-cell *matHeaderCellDef>Date Purchased</mat-header-cell>
+        <mat-cell *matCellDef="let purchase"> {{purchase.purchaseDate | date:'shortDate'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Title">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize">Title</mat-header-cell>
+        <mat-cell *matCellDef="let purchase">{{purchase.title}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize">Price</mat-header-cell>
+        <mat-cell *matCellDef="let products">{{products.price}} </mat-cell>
+    </ng-container>
 
     <ng-container matColumnDef="BuyerName">
         <mat-header-cell *matHeaderCellDef class="matColumnSize">Buyer Name</mat-header-cell>
@@ -20,10 +35,10 @@
       <mat-cell *matCellDef="let purchase">{{purchase.streetAddress}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="AptNumber">
+    <!-- <ng-container matColumnDef="AptNumber">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Apt Number</mat-header-cell>
       <mat-cell *matCellDef="let purchase">{{purchase.aptNumber}}</mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="City">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">City</mat-header-cell>
@@ -45,10 +60,6 @@
       <mat-cell *matCellDef="let purchase"> {{purchase.buyerEmail}} </mat-cell>
     </ng-container>
    
-    <!-- <ng-container matColumnDef="PurchaseDate">
-        <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
-        <mat-cell *matCellDef="let painting"> {{purchase.dateAdded | date:'fullDate'}} </mat-cell>
-    </ng-container> -->
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Details</mat-header-cell>
@@ -58,9 +69,9 @@
     </ng-container>
 
     <ng-container matColumnDef="buttons">
-      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-      <mat-cell *matCellDef="let purchase">
-        <i class="material-icons" routerLink="/purchase/delete/{{purchase.purchaseEntityId}}"> delete </i>
+      <mat-header-cell *matHeaderCellDef class="matColumnSize">Delete</mat-header-cell>
+      <mat-cell *matCellDef="let purchase" class="matcolumnSize">
+        <i class="material-icons" routerLink="/purchase/delete/{{purchase.purchaseEntityId}}">delete</i>
       </mat-cell>
     </ng-container>
   </mat-table>
