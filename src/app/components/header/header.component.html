@@ -31,11 +31,11 @@
                         <a class="nav-link js-scroll-trigger" mat-button href="#contact">Contact Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" mat-button routerLink="/painting/index">Your
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn"  mat-button routerLink="/painting/index">Your
                             Pieces</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" mat-button routerLink="/purchase/index">That Money, Honey!</a>
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn"  mat-button routerLink="/purchase/index">That Money, Honey!</a>
                     </li>
                 </ul>
             </div>
