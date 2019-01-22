@@ -5,13 +5,14 @@ import { APIURL } from '../../../src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PurchaseService {
 
   constructor(private _http: HttpClient) { }
+
   search(data) {
     return this._http.get(`${APIURL}/api/${data}`);
   }
-
   getPurchases() {
     return this._http.get(`${APIURL}/Purchase`, { headers: this.getHeaders() });
   }

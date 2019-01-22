@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       username: new FormControl,
       password: new FormControl,
     });
+    console.log(this._loginForm);
   }
 
   onSubmit() {

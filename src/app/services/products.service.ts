@@ -8,18 +8,14 @@ import { APIURL } from '../../../src/environments/environment.prod';
 export class ProductsService {
 
   constructor(private _http: HttpClient) { }
+  
   search(data) {
     return this._http.get(`${APIURL}/api/${data}`);
   }
-
   getProducts(){
     return this._http.get(`${APIURL}/Products`, { headers: this.getHeaders() });
   }
-
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
- 
-
-
 }
