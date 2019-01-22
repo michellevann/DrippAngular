@@ -25,7 +25,7 @@ paintingId:number;
   onDelete(){
     console.log(this.paintingId)
       this._paintingService.deletePainting(this.paintingId).subscribe(() => {
-      this._router.navigate(['/painting/index']);
+      this._router.navigate(['/painting']);
   });
 }
   
