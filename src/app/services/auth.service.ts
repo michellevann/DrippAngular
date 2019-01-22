@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
 
-const Api_Url = 'https://localhost:44311';
+const Api_Url = 'https://dripp-web-api.azurewebsites.net';
 
 @Injectable({
   providedIn: 'root'
