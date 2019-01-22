@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { APIURL } from '../../../src/environments/environment.prod';
 
 const ApiUrl = 'https://localhost:44311/api';
 
@@ -9,6 +10,9 @@ const ApiUrl = 'https://localhost:44311/api';
 export class PurchaseService {
 
   constructor(private _http: HttpClient) { }
+  search(data) {
+    return this._http.get(`${APIURL}/api/${data}`);
+  }
 
   getPurchases() {
     return this._http.get(`${ApiUrl}/Purchase`, { headers: this.getHeaders() });

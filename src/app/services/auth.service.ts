@@ -5,7 +5,7 @@ import { LoginUser } from '../models/LoginUser';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
-
+import { APIURL } from '../../../src/environments/environment.prod';
 
 const Api_Url = 'https://localhost:44311';
 
@@ -21,7 +21,11 @@ export class AuthService {
     private _router: Router,
     private _jwtHelperService: JwtHelperService
     ) { }
-    
+   
+    search(data) {
+      return this._http.get(`${APIURL}/api/${data}`);
+    }
+
   loggedIn(){
     const token = localStorage.getItem('id_token');
     return !this._jwtHelperService.isTokenExpired(token);
