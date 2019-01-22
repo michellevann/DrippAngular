@@ -5,9 +5,11 @@
       <mat-card-title>{{ product.title }}</mat-card-title>
     </mat-card-header>
     <li class="crop">
-    <img mat-card-image src="{{ product.imageUrl }}">
+      <div class="container">
+        <img mat-card-image src="{{ product.imageUrl }}" height="200" width="100">
+      </div>
     </li>
-    <mat-card-content>
+    <mat-card-content class="stuff">
       <p>${{ product.price }}</p>
       <p>{{ product.size }}</p>
       <p>{{ product.color }}</p>
@@ -17,4 +19,3 @@
     </mat-card-actions>
   </mat-card>
 </div>
-

@@ -22,7 +22,7 @@
 
     <ng-container matColumnDef="Price">
       <mat-header-cell *matHeaderCellDef class="matColumnSize">Price</mat-header-cell>
-      <mat-cell *matCellDef="let painting">{{painting.price}}</mat-cell>
+      <mat-cell *matCellDef="let painting">${{painting.price}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Color">

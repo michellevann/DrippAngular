@@ -3,7 +3,7 @@
 <h1> Add a painting. </h1>
 </div>
 <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="paintingForm">
-  <div>
+  <div class="form">
     <div>
       <mat-form-field>
         <input matInput placeholder="Title" formControlName="Title" type="string" required/>

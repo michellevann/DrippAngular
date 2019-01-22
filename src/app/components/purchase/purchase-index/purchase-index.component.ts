@@ -3,6 +3,7 @@ import { PurchaseService } from '../../../services/purchase.service';
 import { Purchase } from '../../../models/Purchase';
 import { MatTableDataSource } from '@angular/material';
 import { ProductsService } from 'src/app/services/products.service';
+import { PaintingService } from 'src/app/services/painting.service';
 
 @Component({
   selector: 'app-purchase-index',
