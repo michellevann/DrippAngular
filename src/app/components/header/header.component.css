@@ -1,15 +1,29 @@
-.example-fill-remaining-space{
-    flex: 1 1 auto;
-    
+.navbar-nav>li>a {
+    font-size: 20px;
+    font-weight: bold;
+    color: 	#DC74A3;
+    letter-spacing: 0px;
+    margin-top: -15px;
+  
 }
-.h{
-    color:red;
+
+.row {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    margin-left: 0%;
 }
-p{
-    color: #81A7FB;
+
+.row > a {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px rgb(228, 178, 98);
 }
-.btn{
-    margin-right: .5em;
-    background-color: #020643;
-    color: #81A7FB;
+.nav-btn{
+    font-size: 20px;
+    font-weight: bold;
+    color: 	#DC74A3;
+    letter-spacing: 0px;
+    margin-top: -15px;
 }

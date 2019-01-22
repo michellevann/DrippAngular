@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="cards" *ngFor="let product of products$">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+    </mat-card-header>
+    <li class="crop">
+    <img mat-card-image src="{{ product.imageUrl }}">
+    </li>
+    <mat-card-content>
+      <p>${{ product.price }}</p>
+      <p>{{ product.size }}</p>
+      <p>{{ product.color }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="openDialog(product.price, product.title)">Buy Now!</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

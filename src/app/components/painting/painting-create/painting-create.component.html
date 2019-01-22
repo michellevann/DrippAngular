@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container">
+<h1> Add a painting. </h1>
+</div>
+<form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="paintingForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="Title" type="string" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Size" formControlName="Size" type="string" required/>
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="Color" formControlName="Color" type="string" required/>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="Price" formControlName="Price" type="string" required/>
+        </mat-form-field>
+    </div>
+    <button type="button" mat-button color="primary" (click)="imgFileInput.click()">Upload Image</button>
+    <input hidden type="file" #imgFileInput (change)="onFileChanged($event)">
+    
+    <button mat-button class="nav-btn" color="accent" type="submit">Add painting!</button>
+
+<a mat-button color="primary" routerLink="/painting">Back to list</a>
+</div>
+</form>
+
+
+
