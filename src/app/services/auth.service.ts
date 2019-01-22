@@ -7,8 +7,6 @@ import { Observable, Subject } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { APIURL } from '../../../src/environments/environment.prod';
 
-const Api_Url = 'https://localhost:44311';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -32,7 +30,7 @@ export class AuthService {
   } 
 
   login(loginInfo: LoginUser){
-    return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
+    return this._http.post(`${APIURL}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
       this._router.navigate(['/painting/index']);
@@ -42,7 +40,7 @@ export class AuthService {
 currentUser(): Observable<Object> {
   if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
 
-  return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
+  return this._http.get(`${APIURL}/api/Account/UserInfo`, { headers: this.setHeader() });
 }
 
 logout()  {
@@ -50,7 +48,7 @@ logout()  {
   this.isLoggedIn.next(false);
   const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
 
-  this._http.post(`${Api_Url}/api/Auth/Logout`, {headers: authHeader});
+  this._http.post(`${APIURL}/api/Auth/Logout`, {headers: authHeader});
   this._router.navigate(['/admin'])
   window.location.reload();
 }
