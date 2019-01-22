@@ -11,7 +11,7 @@ export class PurchaseService {
   constructor(private _http: HttpClient) { }
 
   search(data) {
-    return this._http.get(`${APIURL}/api/${data}`);
+    return this._http.get(`${APIURL}/${data}`);
   }
   getPurchases() {
     return this._http.get(`${APIURL}/Purchase`, { headers: this.getHeaders() });

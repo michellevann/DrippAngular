@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private _http: HttpClient) { }
 
   search(data) {
-    return this._http.get(`${APIURL}/api/${data}`);
+    return this._http.get(`${APIURL}/${data}`);
   }  
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);

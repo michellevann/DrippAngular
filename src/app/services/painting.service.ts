@@ -10,7 +10,7 @@ export class PaintingService {
   
   constructor(private _http: HttpClient) { }
   search(data) {
-    return this._http.get(`${APIURL}/api/${data}`);
+    return this._http.get(`${APIURL}/${data}`);
   }
 
  getPaintings() {
