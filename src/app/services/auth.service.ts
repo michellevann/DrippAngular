@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { APIURL } from '../../../src/environments/environment.prod';
 
-const Api_Url = 'https://localhost:44311';
+const Api_Url = 'https://dripp-web-api.azurewebsites.net';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { APIURL } from '../../../src/environments/environment.prod';
-const ApiUrl = 'https://localhost:44311/api';
+import { Product } from '../models/Product';
+const ApiUrl = 'https://dripp-web-api.azurewebsites.net/api';
 
 @Injectable({
   providedIn: 'root'
