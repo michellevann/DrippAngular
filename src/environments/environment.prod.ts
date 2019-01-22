@@ -8,5 +8,5 @@ switch (window.location.hostname) {
   APIURL = 'https://lcn-my-drippapp.herokuapp.com'
   break;
   default:
-  APIURL= 'http://localhost:44311';
+  APIURL= 'https://dripp-web-api.azurewebsites.net';
 }
