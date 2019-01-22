@@ -30,13 +30,17 @@
                         <a class="nav-link js-scroll-trigger" mat-button href="#contact">Contact Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn"  mat-button routerLink="/painting/index">Your
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn" mat-button routerLink="/painting">Your
                             Pieces</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn"  mat-button routerLink="/purchase/index">That Money, Honey!</a>
-
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn" mat-button routerLink="/purchase">That
+                            Money, Honey!</a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn" (click)="logout()" mat-button routerLink="/admin">Logout</a>
+                    </li> -->
+                    <button mat-button class="nav-btn" *ngIf="loggedIn" (click)="onLogout()">Logout</button>
                 </ul>
             </div>
         </div>

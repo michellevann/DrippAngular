@@ -25,7 +25,8 @@ export class AuthService {
   loggedIn(){
     const token = localStorage.getItem('id_token');
     return !this._jwtHelperService.isTokenExpired(token);
-  }  
+  } 
+
   login(loginInfo: LoginUser){
     return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
       localStorage.setItem('id_token', token.token);
@@ -40,7 +41,7 @@ currentUser(): Observable<Object> {
   return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
 }
 
-logout(): Observable<Object> {
+logout()  {
   localStorage.clear();
   this.isLoggedIn.next(false);
   const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
@@ -48,8 +49,6 @@ logout(): Observable<Object> {
   this._http.post(`${Api_Url}/api/Auth/Logout`, {headers: authHeader});
   this._router.navigate(['/admin'])
   window.location.reload();
-
-  return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
 }
 
 private setHeader(): HttpHeaders {

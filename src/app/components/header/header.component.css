@@ -4,7 +4,7 @@
     color: 	#DC74A3;
     letter-spacing: 0px;
     margin-top: -15px;
-    line-height: 1.8em;
+  
 }
 
 .row {
@@ -19,4 +19,11 @@
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px rgb(228, 178, 98);
+}
+.nav-btn{
+    font-size: 20px;
+    font-weight: bold;
+    color: 	#DC74A3;
+    letter-spacing: 0px;
+    margin-top: -15px;
 }
