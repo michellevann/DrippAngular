@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { APIURL } from '../../../src/environments/environment.prod';
 
 const ApiUrl = 'https://dripp-web-api.azurewebsites.net/api';
 
@@ -9,6 +10,9 @@ const ApiUrl = 'https://dripp-web-api.azurewebsites.net/api';
 export class PurchaseService {
 
   constructor(private _http: HttpClient) { }
+  search(data) {
+    return this._http.get(`${APIURL}/api/${data}`);
+  }
 
   getPurchases() {
     return this._http.get(`${ApiUrl}/Purchase`, { headers: this.getHeaders() });
@@ -22,4 +26,7 @@ export class PurchaseService {
   deletePurchase(id: number) {
     return this._http.delete(`${ApiUrl}/Purchase/${id}`, { headers: this.getHeaders() });
   }
+  getPaintingById(id:string){
+    return this._http.get(`${ApiUrl}/Painting/${id}`, { headers: this.getHeaders() });
+  } 
 }

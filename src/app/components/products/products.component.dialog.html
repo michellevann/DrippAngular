@@ -1,8 +1,9 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="formThing">
     <div mat-dialog-content>
+        <div class="container">
         <h1 class="mat-dialog-title">Purchase Information</h1>
         <p>You are buying, {{data.title}}, for ${{data.price}}.  Great choice!</p>
-        <div class="row" style="padding-top: 8px;">
+        <div class="row" style="padding-top: 3px;">
             <div class="col-6">
                 <mat-form-field>
                     <input matInput placeholder="Name" formControlName="BuyerName" type="Name" required />
@@ -46,5 +47,6 @@
             </div>
         </div>
         <i class="disclaimer">I stand behind every purchase. Problems? Let me know!</i>
+    </div>
     </div>
 </form>

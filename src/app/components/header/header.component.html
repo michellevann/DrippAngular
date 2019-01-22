@@ -15,7 +15,7 @@
 
     <div class="row">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <img src="/assets/img/image (1).png" alt="logo" height="70" width="140" routerLink="/home">
+            <img src="/assets/img/logo2.png" alt="logo" height="70" width="140" routerLink="/home">
         </a>
         <div class=navbarResponsive style="padding-top: 27px;">
             <div data-spy="scroll" data-target="#navbarResponsive" data-offset="0">
@@ -30,12 +30,17 @@
                         <a class="nav-link js-scroll-trigger" mat-button href="#contact">Contact Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" mat-button routerLink="/painting">Your
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn" mat-button routerLink="/painting">Your
                             Pieces</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" mat-button routerLink="/purchase">That Money, Honey!</a>
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn" mat-button routerLink="/purchase">That
+                            Money, Honey!</a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" *ngIf="loggedIn" (click)="logout()" mat-button routerLink="/admin">Logout</a>
+                    </li> -->
+                    <button mat-button class="nav-btn" *ngIf="loggedIn" (click)="onLogout()">Logout</button>
                 </ul>
             </div>
         </div>

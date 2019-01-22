@@ -139,9 +139,7 @@ p{
 #contactForm{
     padding-left: 35em;
 }
-/* label {
-    color:
-} */
+
 .carouselContainer{
     width: 80%;
     margin: auto;
@@ -157,11 +155,11 @@ p{
         .contactContainer{
             bottom: 900px;
         }
-        h3{
-            color: #31B4D9;
-            font-size: 40px;
-            font-weight: bold;
-        }
+h3{
+    color: #DC74A3;
+    font-size: 40px;
+    font-weight: bold;
+}
         
         .pulse2 {
             position: relative;

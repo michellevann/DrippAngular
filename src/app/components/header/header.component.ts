@@ -1,45 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { 
-  trigger,
-  state,
-  style,
-  animate, 
-  transition,
-} from '@angular/animations';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
-  animations: [
-    trigger('openClose', [
-      state('open', style({
-        height: '200px',
-        opacity: 1,
-        backgroundColor: 'green'
-      })),
-      state('closed', style({
-        height: '100px',
-        opacity: 0.5,
-        backgroundColor: 'yellow'
-      })),
-      transition('open => closed', [
-        animate('1s')
-      ]),
-      transition('closed => open', [
-        animate('0.5s')
-      ]),
-    ]),
-  ],
+  animations: [],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  loggedIn: boolean;
   isOpen = true;
   toggle(){
     this.isOpen = !this.isOpen;
   }
-  constructor() { }
+  constructor(private _authService: AuthService) { }
 
   ngOnInit() {
+    this.loggedIn = this._authService.loggedIn();
+  }
+  onLogout() {
+    this._authService.logout();
   }
 
 }
