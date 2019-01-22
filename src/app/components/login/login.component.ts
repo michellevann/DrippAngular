@@ -8,9 +8,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private _loginForm: FormGroup;
+  _loginForm: FormGroup;
+  _form: any;
+  _authService: any;
 
-  constructor(private _form: FormBuilder, private _authService: AuthService) {
+  constructor( _form: FormBuilder, _authService: AuthService) {
     this.createForm();
   }
 

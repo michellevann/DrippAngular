@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product } from '../models/Product';
-
+import { APIURL } from '../../../src/environments/environment.prod';
 const ApiUrl = 'https://localhost:44311/api';
 
 @Injectable({
@@ -10,6 +9,9 @@ const ApiUrl = 'https://localhost:44311/api';
 export class ProductService {
 
   constructor(private _http: HttpClient) { }
+  search(data) {
+    return this._http.get(`${APIURL}/api/${data}`);
+  }
 
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
