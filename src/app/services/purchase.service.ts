@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { APIURL } from '../../../src/environments/environment.prod';
 
-const ApiUrl = 'https://dripp-web-api.azurewebsites.net/api';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,18 +13,18 @@ export class PurchaseService {
   }
 
   getPurchases() {
-    return this._http.get(`${ApiUrl}/Purchase`, { headers: this.getHeaders() });
+    return this._http.get(`${APIURL}/Purchase`, { headers: this.getHeaders() });
   }
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
   }
   getPurchaseById(id:string) {
-    return this._http.get(`${ApiUrl}/Purchase/${id}`, { headers: this.getHeaders() } );
+    return this._http.get(`${APIURL}/Purchase/${id}`, { headers: this.getHeaders() } );
   }
   deletePurchase(id: number) {
-    return this._http.delete(`${ApiUrl}/Purchase/${id}`, { headers: this.getHeaders() });
+    return this._http.delete(`${APIURL}/Purchase/${id}`, { headers: this.getHeaders() });
   }
   getPaintingById(id:string){
-    return this._http.get(`${ApiUrl}/Painting/${id}`, { headers: this.getHeaders() });
+    return this._http.get(`${APIURL}/Painting/${id}`, { headers: this.getHeaders() });
   } 
 }

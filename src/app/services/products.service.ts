@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { APIURL } from '../../../src/environments/environment.prod';
 
-const ApiUrl = 'https://dripp-web-api.azurewebsites.net/api';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +13,7 @@ export class ProductsService {
   }
 
   getProducts(){
-    return this._http.get(`${ApiUrl}/Products`, { headers: this.getHeaders() });
+    return this._http.get(`${APIURL}/Products`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
