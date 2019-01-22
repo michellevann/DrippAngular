@@ -16,6 +16,9 @@ export class PurchaseService {
   getPurchases() {
     return this._http.get(`${APIURL}/Purchase`, { headers: this.getHeaders() });
   }
+  private getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
+  }
   getPurchaseById(id:string) {
     return this._http.get(`${APIURL}/Purchase/${id}`, { headers: this.getHeaders() } );
   }
@@ -25,7 +28,4 @@ export class PurchaseService {
   getPaintingById(id:string){
     return this._http.get(`${APIURL}/Painting/${id}`, { headers: this.getHeaders() });
   } 
-  private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
-  }
 }

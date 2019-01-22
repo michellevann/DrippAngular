@@ -12,10 +12,13 @@ export class ProductService {
   search(data) {
     return this._http.get(`${APIURL}/api/${data}`);
   }  
-  createPurchaseToken(purchase: FormData) {
-    return this._http.post(`${APIURL}/Purchase/CreateCharge`, purchase, { headers: this.getHeaders()});
-  }
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
   }
+  createPurchaseToken(purchase: FormData) {
+    var post = this._http.post(`${APIURL}/Purchase/CreateCharge`, purchase, { headers: this.getHeaders()});
+    
+    return post;
+  }
+
 }
