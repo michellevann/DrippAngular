@@ -1,7 +1,7 @@
 .navbar-nav>li>a {
     font-size: 20px;
     font-weight: bold;
-    color: 	#DC74A3;
+    color: 	#8b5276;
     letter-spacing: 0px;
     margin-top: -15px;
   
@@ -9,9 +9,10 @@
 
 .row {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(253, 204, 220);
     width: 100%;
     margin-left: 0%;
+    border: 25px solid rgba(237, 237, 245, 0.555);
 }
 
 .row > a {
@@ -23,7 +24,7 @@
 .nav-btn{
     font-size: 20px;
     font-weight: bold;
-    color: 	#DC74A3;
+    color: 	#8b5276;
     letter-spacing: 0px;
     margin-top: -15px;
 }

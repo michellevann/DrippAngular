@@ -93,6 +93,7 @@ p{
 #about{
     text-align: center;
     padding-top: 3em;
+    padding-left: 3em;
 }
 .aboutSection{
     background-color: rgb(253, 204, 220);
@@ -100,17 +101,10 @@ p{
     border: 35px solid rgba(237, 237, 245, 0.555);
     padding: 25px;
     margin: 25px;
+   
 
 }
-/* .parallax{
-  background-image: url('/assets/img/river.jpg');
-  min-height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-} */
+
 /* .navbar-nav > li{
     display: inline-block;
 }
@@ -147,16 +141,17 @@ p{
    
 }
 .carousel-inner > .carousel-item > img {
-            border: 70px solid rgba(237, 237, 245, 0.692);
+            border: 70px solid rgba(237, 237, 245, 0.555);
             width: 80%;
             margin: auto;
+            background-color: rgb(198, 222, 250);
         }
 
         .contactContainer{
             bottom: 900px;
         }
 h3{
-    color: #DC74A3;
+    color: #8b5276;
     font-size: 40px;
     font-weight: bold;
 }
