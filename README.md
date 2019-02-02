@@ -8,9 +8,9 @@ Dripp is an e-commerce web application made for an incredible artist by the name
 
 ## Development Team
 
-* Laura Nahas https://github.com/lauracn15
-
 * Michelle Vann https://github.com/michellevann
+
+* Laura Nahas https://github.com/lauracn15
 
 * Luke Titus https://github.com/lukedtitus
 
