@@ -1,0 +1,22 @@
+h1 {
+    color: #F94F8C;
+    font-size: 2em;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.row {
+    background-color: black;
+    height: 100vh;
+}
+
+.aboutSection {
+    width: 420px;
+    color: white;
+    text-align: left;
+    padding-top: 1em;
+    padding-left: 5em;
+}
+
+.pic {
+    border-radius: 3%;
+}

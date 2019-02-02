@@ -1,19 +1,30 @@
-  <div class="contactContainer">
-      <h1 class="text-center">Contact Me</h1>
-      <div class="row" id="contactForm">
-          <form (submit)="onSubmit();" action="https://formspree.io/michelle@dougvann.com" method="POST">
-              <label>Full Name</label>
-              <input id="name" type="text" class="form-control" placeholder="Your Name">
-              <p class="help-block text-danger"></p>
-              <label>Email Address</label>
-              <input id="email" type="email" class="form-control" placeholder="Your Email">
-              <p class="help-block text-danger"></p>
-              <textarea name="message" input id="message" type="text" class="form-control" placeholder="Your Message"
-                  rows="5">
-              </textarea>
-              <p class="help-block text-danger"></p>
-              <button type="submit" class="btn btn-lg btn-black" id="submit-btn">Send Message</button>
-          </form>
-      </div>
+<div class="row">
+  <app-header></app-header>
+  <div class="aboutSection">I know nothing about art. I hope you don't either.
+    Three years ago I started painting, and felt bogged down by all the fancy-pants terms that I saw
+    other artists throwing around. To a most wildly beautiful and creative soul, may your fingers bleed from
+    your climb and may you never stop. The gods give the hardest path to those
+    who can endure. And you are one hot mama. Thank you for coloring my canvas. The colors you see
+    here, I found in you.
   </div>
-
+  <div class="pic">
+    <h1>Jabber with Juniper</h1>
+    <img src="../../../assets/img/Juniper-resize.jpg">
+  </div>
+  <div class="contactMe">
+    <div class="row" id="contactForm">
+      <form (submit)="onSubmit();" action="https://formspree.io/michelle@dougvann.com" method="POST">
+        <label>Full Name</label>
+        <input id="name" type="text" class="form-control" placeholder="Your Name">
+        <p class="help-block text-danger"></p>
+        <label>Email Address</label>
+        <input id="email" type="email" class="form-control" placeholder="Your Email">
+        <p class="help-block text-danger"></p>
+        <textarea name="message" input id="message" type="text" class="form-control" placeholder="Your Message" rows="5">
+              </textarea>
+        <p class="help-block text-danger"></p>
+        <button type="submit" class="btn btn-lg btn-black" id="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>

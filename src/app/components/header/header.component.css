@@ -1,12 +1,12 @@
-/* .navbar {
+.navbar {
     position: sticky;
 }
 
-.navbar-brand {
-    padding-left: 150px;
+#gallery {
+    padding-left: 34%;
 }
 
-#gallery {
+.navbar-brand {
     padding-left: 3%;
 }
 
@@ -17,6 +17,5 @@
 .nav-item {
     color: #3DADDA;
     font-size: 1.5em;
-    font-family: 'Gloria Hallelujah', cursive;
-} */
-
+    font-family: 'Permanent Marker', cursive;
+}

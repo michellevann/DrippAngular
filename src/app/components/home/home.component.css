@@ -6,42 +6,11 @@
     height: 100vh;
 }
 
-.navbar {
-    position: sticky;
-}
-
-#gallery {
-    padding-left: 34%;
-}
-
-.navbar-brand {
-    padding-left: 3%;
-}
-
-#contact {
-    padding-left: 1%;
-}
-
-.nav-item {
-    color: #3DADDA;
-    font-size: 1.5em;
-    font-family: 'Permanent Marker', cursive;
-}
-
 p {
     color: #F94F8C;
     font-size: 2em;
     font-family: 'Permanent Marker', cursive;
     margin: 0;
-}
-
-.aboutSection {
-    background-color: black;
-    width: 420px;
-    color: white;
-    text-align: left;
-    padding-top: 1em;
-    padding-left: 5em;
 }
 
 
