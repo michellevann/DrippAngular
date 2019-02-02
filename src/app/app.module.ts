@@ -41,6 +41,7 @@ import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/p
 
 
 import { getLocaleDateTimeFormat } from '@angular/common';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 const routes = [
@@ -78,7 +79,8 @@ const routes = [
     ProductsDialog,
     PurchaseIndexComponent,
     PurchaseDetailComponent,
-    PurchaseDeleteComponent
+    PurchaseDeleteComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
