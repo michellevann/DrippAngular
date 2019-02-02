@@ -2,21 +2,57 @@ h1 {
     color: #F94F8C;
     font-size: 2em;
     font-family: 'Permanent Marker', cursive;
+    padding-bottom: 10%;
 }
 
-.row {
-    background-color: black;
+.contactContainer {
+    background-image: url('/assets/img/colorSmokeRotate.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
 }
 
-.aboutSection {
-    width: 420px;
-    color: white;
-    text-align: left;
-    padding-top: 1em;
-    padding-left: 5em;
+.row {
+    margin: 0;
+    padding-left: 10%;
 }
 
 .pic {
+    padding-top: 11%;
+}
+
+#junie {
     border-radius: 3%;
+}
+
+.contactMe {
+    padding-left: 6%;
+    padding-top: 5%;
+    width: 35%;
+}
+
+#name {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#email {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#message {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#submit-btn {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.aboutSection {
+    font-family: 'Gloria Hallelujah', cursive;
+    width: 26%;
+    color: #3DADDA;
+    text-align: left;
+    padding-top: 11%;
+    padding-left: 5%;
 }

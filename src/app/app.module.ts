@@ -30,7 +30,7 @@ import { PaintingIndexComponent } from './components/painting/painting-index/pai
 import { PaintingCreateComponent } from './components/painting/painting-create/painting-create.component';
 import { PaintingDetailComponent } from './components/painting/painting-detail/painting-detail.component';
 import { HomeComponent } from './components/home/home.component';
-import { PaintingEditComponent } from './components/painting-edit/painting-edit.component';
+import { PaintingEditComponent } from './components/painting/painting-edit/painting-edit.component';
 import { PaintingDeleteComponent } from './components/painting/painting-delete/painting-delete.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProductsComponent, ProductsDialog } from './components/products/products.component';
