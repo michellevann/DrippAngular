@@ -1,10 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 body, html{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', Arial, sans-serif;
+    background-attachment: fixed;  
     background-image: url('/assets/img/puff.jpg');
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
 }
