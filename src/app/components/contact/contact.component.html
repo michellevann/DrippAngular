@@ -1,0 +1,45 @@
+<div class="contactContainer">
+  <app-header></app-header>
+  <div class="row">
+    <div class="pic">
+      <img src="../../../assets/img/Juniper-resize.jpg" id="junie">
+    </div>
+    <div class="contactMe">
+      <div class="row" id="contactForm">
+        <form (submit)="onSubmit();" action="https://formspree.io/michelle@dougvann.com" method="POST">
+          <h1>Jabber with Juniper</h1>
+          <div class="control-group">
+              <div class="form-group" style="margin:0;">
+                  <input type="text" class="form-control" placeholder="Your Name" id="name"
+                      required data-validation-required-message="Please enter your name"
+                      name="name">
+                  <p class="help-block text-danger"></p>
+              </div>
+          </div>
+          <div class="control-group">
+              <div class="form-group" style="margin:0;">
+                  <input type="email" class="form-control" placeholder="Your Email" id="email"
+                      required data-validation-required-message="Please enter your email"
+                      name="_replyto">
+                  <p class="help-block text-danger"></p>
+              </div>
+          </div>
+          <div class="control-group">
+              <div class="form-group">
+                  <textarea class="form-control" rows="6" placeholder="Your Thoughts" id="message"
+                      required data-validation-required-message="Please leave a message"
+                      name="message"></textarea>
+                  <p class="help-block text-danger"></p>
+              </div>
+          </div>
+          <button type="submit" class="btn btn-lg btn-light" id="submit-btn">Send Your Thoughts</button>
+        </form>
+      </div>
+    </div>
+      <div class="aboutSection">Hey there, beautiful, I'm glad you've found me. From one most wildly creative soul
+        to another... may your fingers bleed from your climb and may you never stop. The gods give the hardest path to those
+        who can endure. And you are one hot mama. Thank you for coloring my canvas. The colors you see
+        here... I found in you.
+      </div>
+  </div>
+</div>

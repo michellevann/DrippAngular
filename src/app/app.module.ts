@@ -30,7 +30,7 @@ import { PaintingIndexComponent } from './components/painting/painting-index/pai
 import { PaintingCreateComponent } from './components/painting/painting-create/painting-create.component';
 import { PaintingDetailComponent } from './components/painting/painting-detail/painting-detail.component';
 import { HomeComponent } from './components/home/home.component';
-import { PaintingEditComponent } from './components/painting-edit/painting-edit.component';
+import { PaintingEditComponent } from './components/painting/painting-edit/painting-edit.component';
 import { PaintingDeleteComponent } from './components/painting/painting-delete/painting-delete.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProductsComponent, ProductsDialog } from './components/products/products.component';
@@ -38,27 +38,27 @@ import { PurchaseService } from './services/purchase.service';
 import { PurchaseIndexComponent } from './components/purchase/purchase-index/purchase-index.component';
 import { PurchaseDetailComponent } from './components/purchase/purchase-detail/purchase-detail.component';
 import { PurchaseDeleteComponent } from './components/purchase/purchase-delete/purchase-delete.component';
-
-
+import { ContactComponent } from './components/contact/contact.component';
 import { getLocaleDateTimeFormat } from '@angular/common';
 
 
 const routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'admin', component: LoginComponent},
+  { path: 'contact', component: ContactComponent },
+  { path: 'admin', component: LoginComponent },
   { path: 'products', component: ProductsComponent },
 
   { path: 'purchase', canActivate: [AuthGuard], children: [
-    {path: '', component: PurchaseIndexComponent},
-    {path: 'detail/:id', component: PurchaseDetailComponent},
-    {path: 'delete/:id', component: PurchaseDeleteComponent}
+    { path: '', component: PurchaseIndexComponent },
+    { path: 'detail/:id', component: PurchaseDetailComponent },
+    { path: 'delete/:id', component: PurchaseDeleteComponent }
   ]},
   { path: 'painting', canActivate: [AuthGuard], children: [
-     { path: '', component: PaintingIndexComponent},
-     { path: 'create', component: PaintingCreateComponent},
-     { path: 'edit/:id', component: PaintingEditComponent},
-     { path: 'detail/:id', component: PaintingDetailComponent},
-     { path: 'delete/:id', component: PaintingDeleteComponent}
+     { path: '', component: PaintingIndexComponent },
+     { path: 'create', component: PaintingCreateComponent },
+     { path: 'edit/:id', component: PaintingEditComponent },
+     { path: 'detail/:id', component: PaintingDetailComponent },
+     { path: 'delete/:id', component: PaintingDeleteComponent }
     ]},
   { path: '**', component: HomeComponent },
 ];
@@ -78,7 +78,8 @@ const routes = [
     ProductsDialog,
     PurchaseIndexComponent,
     PurchaseDetailComponent,
-    PurchaseDeleteComponent
+    PurchaseDeleteComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

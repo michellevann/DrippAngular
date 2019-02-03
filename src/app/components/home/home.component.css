@@ -1,17 +1,16 @@
+.background {
+    background-image: url('/assets/img/colorSmoke.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 p {
     color: #F94F8C;
     font-size: 2em;
     font-family: 'Permanent Marker', cursive;
-    padding-left: 7%;
-}
-
-.aboutSection {
-    background-color: black;
-    width: 420px;
-    color: white;
-    text-align: left;
-    padding-top: 1em;
-    padding-left: 5em;
+    margin: 0;
 }
 
 
