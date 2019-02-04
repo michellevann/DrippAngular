@@ -1,5 +1,5 @@
 {
-  "name": "dripp-painting",
+  "name": "mydripp",
   "version": "0.0.0",
   "scripts": {
     "compodoc:gen": "./node_modules/.bin/compodoc -p src/tsconfig.app.json",
@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/paintingAngular"
+    "start": "serve -s dist/mydripp"
   },
   "private": true,
   "dependencies": {

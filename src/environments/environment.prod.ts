@@ -5,9 +5,9 @@ export const environment = {
 export let APIURL ='';
 
 switch (window.location.hostname) {
-  case 'https://dripp-painting.herokuapp.com':
-  APIURL = 'https://dripp-web-api.azurewebsites.net/api'
+  case 'https://mydripp.herokuapp.com':
+  APIURL = 'https://dripp.azurewebsites.net/api'
   break;
   default:
-  APIURL= 'https://dripp-web-api.azurewebsites.net/api';
+  APIURL= 'https://dripp.azurewebsites.net/api';
 }
