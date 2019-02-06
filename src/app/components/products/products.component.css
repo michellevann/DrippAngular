@@ -1,19 +1,26 @@
 .galleryContainer {
     background-color: black;
-}
-.card {
-    width: 400px;
-    height: 400px;
-    background-color: ivory;
-    border: 10px solid #3DADDA;
+    height: 100vh;
 }
 
-.cards {
+.cardsContainer {
     display: inline-block;
-    padding-top: 3em;
-    padding-left: 1em;
-    padding-right: 1em;
-    /* grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end]; */
+    padding: .5em 1em 1em 1em;
+}
+
+.mat-card {
+    position: relative;
+    border-radius: 4px;
+    width: 300px;
+    height: 300px;
+    background-color: ivory;
+    border: 5px solid #3DADDA;
+}
+
+.title {
+    color: #F94F8C;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1em;
 }
 
 .crop img {
@@ -24,18 +31,26 @@
     max-height: 150px;
 }
 
-.productInfo {
-    color: black;
-    /* line-height: 80%; */
+.mat-card-image {
+    margin: 0 -17px 0 -16px;
 }
 
-.title {
-    color: #F94F8C;
-    font-family: 'Permanent Marker', cursive;
+i {
+    font-size: .75em;
+}
+
+mat-card-content {
+    margin: 0;
+}
+
+.productInfo {
+    color: black;
 }
 
 mat-card-actions {
-    padding:0;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 0;
 }
 
 .btn {
