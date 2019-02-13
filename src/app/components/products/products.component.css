@@ -35,8 +35,11 @@
     margin: 0 -17px 0 -16px;
 }
 
-i {
-    font-size: .75em;
+#hint {
+    font-size: .7em;
+    font-family: 'Roboto';
+    font-style: italic;
+    color: black;
 }
 
 mat-card-content {

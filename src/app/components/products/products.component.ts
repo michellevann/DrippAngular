@@ -9,6 +9,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/
 import { ProductsService } from '../../services/products.service';
 import { Products } from '../../models/Products';
 import { MatTableDataSource } from '@angular/material';
+import { invokeQuery } from '@angular/animations/browser/src/render/shared';
 
 export interface DialogData {
   cardNumber: number;
@@ -78,7 +79,18 @@ export class ProductsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('the dialog was closed');
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialogPainting() {
+    const dialogRef = this.dialog.open(ProductsDialogPainting, {
+      width: '500px',
+      height: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
   }
 
@@ -92,7 +104,7 @@ export class ProductsComponent implements OnInit {
 
 export class ProductsDialog { 
   formThing: FormGroup;
-  constructor(private _productService: ProductService, private _router: Router,
+  constructor(private _productService: ProductService, 
     public dialogRef: MatDialogRef<ProductsDialog>, private _form:FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
       this.createForm()
@@ -132,7 +144,7 @@ export class ProductsDialog {
         console.log(response.error.message);
       }
     });
-    this.onNoClick();
+    // this.onNoClick();
   }
 
   chargeCard(form) {
@@ -163,6 +175,17 @@ export class ProductsDialog {
     this.chargeCreditCard(form)
   }
 }
+
+@Component({
+  selector: 'app-products-dialogPainting',
+  templateUrl: './products.component.dialogPainting.html',
+  // styleUrls: ['./products.component.dialogPainting.css']
+})
+
+export class ProductsDialogPainting {}
+
+
+
 // @Component({
 //   selector: 'app-products-dialog',
 //   templateUrl: './products.component.dialog.html',
