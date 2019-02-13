@@ -83,16 +83,16 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  openDialogPainting() {
-    const dialogRef = this.dialog.open(ProductsDialogPainting, {
-      width: '500px',
-      height: '400px',
-    });
+  // openDialogPainting() {
+  //   const dialogRef = this.dialog.open(ProductsDialogPainting, {
+  //     width: '500px',
+  //     height: '400px',
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 
 }
 
@@ -176,13 +176,13 @@ export class ProductsDialog {
   }
 }
 
-@Component({
-  selector: 'app-products-dialogPainting',
-  templateUrl: './products.component.dialogPainting.html',
-  // styleUrls: ['./products.component.dialogPainting.css']
-})
+// @Component({
+//   selector: 'app-products-dialogPainting',
+//   templateUrl: './products.component.dialogPainting.html',
+//   styleUrls: ['./products.component.dialogPainting.css']
+// })
 
-export class ProductsDialogPainting {}
+// export class ProductsDialogPainting {}
 
 
 
